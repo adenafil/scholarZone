@@ -6,7 +6,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-sma-unggulan-ct-arsa/",
         "enroll_link": "https://admission.kaist.ac.kr/intl-undergraduate/notice/notice#1932",
         "end_scholarship_date": "2025-01-07",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Korea Selatan",
+        "image_header": "https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jurusan-di-kaist.webp"
     },
     {
         "title": "Beasiswa Sekolah Gratis di SMA Unggulan CT ARSA Foundation Sukoharjo Tahun 2025 – 2026 untuk Lulusan SMP/MTs",
@@ -15,7 +17,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-sma-unggulan-ct-arsa/",
         "enroll_link": "https://ppdb.smauctarsaskh.sch.id/",
         "end_scholarship_date": "2025-01-10",
-        "category_id": [1]
+        "category_id": [1],
+        "country": "Indonesia",
+        "image_header": "https://awsimages.detik.net.id/community/media/visual/2023/11/01/sma-unggulan-ct-arsa-foundation-sukoharjo_169.jpeg?w=1200"
     },
     {
         "title": "Beasiswa Hansen Leadership Institute di USA Pelatihan Kepemimpinan untuk Mahasiswa FULL",
@@ -24,7 +28,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-hansen-leadership/",
         "enroll_link": "https://www.hansenleadershipinstitute.org/apply-now/",
         "end_scholarship_date": "2025-01-10",
-        "category_id": [1]
+        "category_id": [1],
+        "country": "Amerika Serikat",
+        "image_header": "https://asset.kompas.com/crops/fQgFIyaIAhlUlnhzPiEMN1Rpcvs=/0x134:1000x634/1200x800/data/photo/2019/01/17/478226800.jpg"
     },
     {
         "title": "Beasiswa Penuh S2 – S3 di Arab Saudi oleh KAUST Fellowship",
@@ -33,7 +39,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-arab-saudi-kaust/",
         "enroll_link": "https://kaust.askadmissions.co.uk/emtinterestpage.aspx?ip=inquire",
         "end_scholarship_date": "2025-01-10",
-        "category_id": [2, 3]
+        "category_id": [2, 3],
+        "country": "Arab Saudi",
+        "image_header": "https://ieltspresso.com/wp-content/uploads/2024/09/kaust-1.jpeg"
     },
     {
         "title": "Beasiswa S2 Qatar Tahun 2025 di Doha Institute untuk Lulusan S1",
@@ -42,7 +50,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s2-qatar-doha-institute/",
         "enroll_link": "https://www.dohainstitute.edu.qa/en/Admissions-Office/Pages/Scholarships.aspx",
         "end_scholarship_date": "2025-01-15",
-        "category_id": [3]
+        "category_id": [3],
+        "country": "Qatar",
+        "image_header": "https://wartapendidikanjogja.com/wp-content/uploads/2024/09/18135ab740c5b493b6783727089acac5.jpg"
     },
     {
         "title": "Arryman Scholarship ISRSF Kuliah MSc – PhD di SOAS London University Fully Funded untuk Lulusan minimal S1",
@@ -51,7 +61,9 @@
         "information_link": "https://indbeasiswa.com/arryman-scholarship/",
         "enroll_link": "https://isrsf.org/arryman-scholarship-page",
         "end_scholarship_date": "2025-01-15",
-        "category_id": [3, 4]
+        "category_id": [3, 4],
+        "country": "England",
+        "image_header": "https://ieltspresso.com/wp-content/uploads/2024/12/pexels-chris-schippers-139261-427679-scaled.jpg"
     },
     {
         "title": "[NEW] Pelatihan Coding Camp Gratis oleh DBS Foundation untuk Pelajar, Mahasiswa dan Masyarakat Umum",
@@ -60,7 +72,9 @@
         "information_link": "https://indbeasiswa.com/pelatihan-coding-camp/",
         "enroll_link": "https://www.dicoding.com/programs/dbsfcodingcamp/2025/registration?referrer_id=137310",
         "end_scholarship_date": "2025-01-30",
-        "category_id": [1, 2, 3, 4]
+        "category_id": [1, 2, 3, 4],
+        "country": "Indonesia",
+        "image_header": "https://youngster.id/storage/2024/11/DBS-Foundation-Coding-Camp-peserta.jpeg"
     },
     {
         "title": "Beasiswa S2 Telkom University Tahun 2025 untuk Lulusan S1/Sederajat",
@@ -69,7 +83,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s2-telkom-university/",
         "enroll_link": "https://situ-adm.telkomuniversity.ac.id/admission/auth/signup",
         "end_scholarship_date": "2025-01-30",
-        "category_id": [3]
+        "category_id": [3],
+        "country": "Indonesia",
+        "image_header": "https://pedomanrakyat.co.id/wp-content/uploads/2024/12/Beasiswa-S2-Telkom-University.jpg"
     },
     {
         "title": "Beasiswa S2 Swedia SISGP 2025 oleh Pemerintah Swedia",
@@ -78,7 +94,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s2-swedia-sisgp/",
         "enroll_link": "https://www.universityadmissions.se/intl/start",
         "end_scholarship_date": "2025-01-31",
-        "category_id": [3]
+        "category_id": [3],
+        "country": "Swedia",
+        "image_header": "https://esportsinsider.com/wp-content/uploads/2017/03/12074966_l.jpg"
     },
     {
         "title": "Beasiswa S2 Belanda oleh Maastricht University Fully Funded",
@@ -87,7 +105,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s2-belanda-maastricht-univ/",
         "enroll_link": "https://curriculum.maastrichtuniversity.nl/education/master",
         "end_scholarship_date": "2025-02-01",
-        "category_id": [3]
+        "category_id": [3],
+        "country": "Belanda",
+        "image_header": "https://blog.hellocation.id/wp-content/uploads/2024/11/maastricht-university-scaled.jpg"
     },
     {
         "title": "Fulbright ETA – English Teaching Assistant untuk SMA dan SMK",
@@ -96,7 +116,9 @@
         "information_link": "https://indbeasiswa.com/fulbright-eta-untuk-sma-smk/",
         "enroll_link": "https://www.aminef.or.id/how-to-invite-americans/hosting-etas-indonesian-secondary-school/",
         "end_scholarship_date": "2025-02-01",
-        "category_id": [1]
+        "category_id": [1],
+        "country": "Amerika Serikat",
+        "image_header": "https://www.aminef.or.id/c/uploads/2023/08/11-Pengajar-Bahasa-Inggris-Asal-AS-Bakal-Ngajar-di-SMA_SMK.jpg"
     },
     {
         "title": "Beasiswa Fulbright untuk Kuliah S2 – S3 di Amerika Serikat FULL Scholarship",
@@ -105,7 +127,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-fulbright-s2-s3-amerika/",
         "enroll_link": "https://stu.aminef.or.id/grantee/",
         "end_scholarship_date": "2025-02-15",
-        "category_id": [3, 4]
+        "category_id": [3, 4],
+        "country": "Amerika Serikat",
+        "image_header": "https://asset.kompas.com/crops/XuBVmluMWq6pyPDw56nyEV0_mpA=/0x0:509x339/1200x800/data/photo/2022/11/22/637c3a3a55368.jpg"
     },
     {
         "title": "NRC Fellowship Pelatihan dan Pendanaan Riset untuk Mahasiswa S1 & S2",
@@ -114,7 +138,9 @@
         "information_link": "https://indbeasiswa.com/nrc-fellowship-nutrifood/",
         "enroll_link": "https://form.nutrifood.co.id/our-events/nutrifood-research-center-fellowship/pendaftaran",
         "end_scholarship_date": "2025-02-28",
-        "category_id": [2, 3]
+        "category_id": [2, 3],
+        "country": "Indonesia",
+        "image_header": "https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/134/2024/12/11/WhatsApp-Image-2024-12-11-at-153006-2876021721.jpeg"
     },
     {
         "title": "Beasiswa Bank Indonesia untuk Mahasiswa S1, D4, dan D3",
@@ -123,7 +149,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-bank-indonesia/",
         "enroll_link": "https://indbeasiswa.com/beasiswa-bank-indonesia/",
         "end_scholarship_date": "2025-02-28",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indonesia",
+        "image_header": "https://halokampus.com/wp-content/uploads/2020/11/Beasiswa-S1-untuk-mahasiswa-baru.jpg"
     },
     {
         "title": "[FULL Scholarship] Beasiswa Brunei Darussalam (BDGS) untuk Kuliah Diploma, S1 dan S2",
@@ -132,7 +160,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-brunei-darussalam-bdgs/",
         "enroll_link": "https://infinity.cloud.gov.bn/bdgs-mfabrunei/applicationform.php",
         "end_scholarship_date": "2025-02-15",
-        "category_id": [2, 3]
+        "category_id": [2, 3],
+        "country": "Brunei Darussalam",
+        "image_header": "https://topcareer.id/wp-content/uploads/2020/01/Brunei-Darussalam-1080x628-1-1024x595.jpg"
     },
     {
         "title": "Beasiswa Penuh Kuliah S1 di Jepang Mitsui-Bussan Scholarship",
@@ -141,7 +171,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s1-jepang-mitsui-bussan/",
         "enroll_link": "https://www.mbkscholarship-id.com/",
         "end_scholarship_date": "2025-02-15",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Japan",
+        "image_header": "https://tutwuri.id/wp-content/uploads/2022/04/Program-Beasiswa-Mitsui-Bussan-untuk-Indonesia.jpg"
     },
     {
         "title": "Beasiswa IGGS Kuliah Gratis di Telkom University untuk Siswa kelas 12 SMA/SMK/Sederajat",
@@ -150,7 +182,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-iggs/",
         "enroll_link": "https://iggsfojb.com/",
         "end_scholarship_date": "2025-02-23",
-        "category_id": [1]
+        "category_id": [1],
+        "country": "Indonesia",
+        "image_header": "https://asset-2.tstatic.net/newsmaker/foto/bank/images/biaya-kuliah-di-telkom-university.jpg"
     },
     {
         "title": "Beasiswa S3 Austria Program IASP Tahun 2025 untuk Dosen PTN dan PTS",
@@ -159,7 +193,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s3-austria-dosen-iasp/",
         "enroll_link": "https://beasiswadosen.kemdikbud.go.id/",
         "end_scholarship_date": "2025-03-01",
-        "category_id": [4]
+        "category_id": [4],
+        "country": "Austria",
+        "image_header": "https://duniadosen.com/wp-content/uploads/2023/04/Austria.jpg"
     },
     {
         "title": "Beasiswa Ajinomoto 2026 Kuliah S2 di Jepang",
@@ -168,7 +204,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-ajinomoto-kuliah-s2-jepang/",
         "enroll_link": "https://indbeasiswa.com/beasiswa-ajinomoto-kuliah-s2-jepang/",
         "end_scholarship_date": "2025-03-05",
-        "category_id": [3]
+        "category_id": [3],
+        "country": "Japan",
+        "image_header": "https://mediaindonesia.com/cdn-cgi/image/width=1200,quality=80,format=webp/https://asset.mediaindonesia.com/news/2023/01/1ee4eaae7cf1d5599e63aab95a895c87.jpg"
     },
     {
         "title": "Beasiswa GKS Kuliah di Korea Selatan Studi S2, S3, Riset FULL Scholarship",
@@ -177,7 +215,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-gks-s2-s3-korea/",
         "enroll_link": "https://overseas.mofa.go.kr/id-id/brd/m_2707/view.do?seq=761567&page=1",
         "end_scholarship_date": "2025-03-05",
-        "category_id": [3, 4]
+        "category_id": [3, 4],
+        "country": "Korea Selatan",
+        "image_header": "https://duniadosen.com/wp-content/uploads/2023/03/Beasiswa-GKS-2023-1280x720.jpg"
     },
     {
         "title": "Beasiswa Kuliah S1 di Singapura Program Goh Keng Swee (GKS) Scholarship untuk Lulusan SMA/Sederajat",
@@ -186,7 +226,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-goh-keng-swee/",
         "enroll_link": "https://www.pscgateway.gov.sg/app/gks/account/uidsignin2/",
         "end_scholarship_date": "2025-03-25",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Singapore",
+        "image_header": "https://asset.kompas.com/crops/E2eFbDe4u6wgwU_QzFyrnZD9QnE=/0x51:940x678/1200x800/data/photo/2023/12/21/658432a45b4da.jpeg"
     },
     {
         "title": "Program Beasiswa Kalla untuk Mahasiswa Sulawesi Kuliah D3, D4 dan S1",
@@ -195,7 +237,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-kalla/",
         "enroll_link": "https://www.yayasanhadjikalla.or.id/educare/beasiswa-kalla/",
         "end_scholarship_date": "2025-04-06",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indonesia",
+        "image_header": "https://radarsulbar.fajar.co.id/wp-content/uploads/2024/04/IMG-20240422-WA0013.jpg"
     },
     {
         "title": "[FULL Scholarship] Beasiswa MEXT Research Students untuk S2-S3 di Jepang",
@@ -204,7 +248,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-mext-research-students/",
         "enroll_link": "https://bit.ly/2YL92VY",
         "end_scholarship_date": "2025-04-24",
-        "category_id": [3, 4]
+        "category_id": [3, 4],
+        "country": "Japan",
+        "image_header": "https://ieltspresso.com/wp-content/uploads/2024/05/cherry-blossoms-spring-chureito-pagoda-fuji-mountain-japan-scaled-1.jpg"
     },
     {
         "title": "Beasiswa Stimulan Balikpapan untuk Mahasiswa D3, D4, S1, S2, S3",
@@ -213,7 +259,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-stimulan-balikpapan/",
         "enroll_link": "https://beasiswa.balikpapan.oo.id/",
         "end_scholarship_date": "2025-04-26",
-        "category_id": [2, 3, 4]
+        "category_id": [2, 3, 4],
+        "country": "Indonesia",
+        "image_header": "https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2023/05/27/beasiswa-BCA-3463168477.jpg"
     },
     {
         "title": "Beasiswa Australia Awards untuk Kuliah S2 – S3 FULL Scholarship",
@@ -222,7 +270,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-australia-awards/",
         "enroll_link": "https://www.australiaawardsindonesia.org/content/261/12/application-intake-2024?sub=true",
         "end_scholarship_date": "2025-04-30",
-        "category_id": [3, 4]
+        "category_id": [3, 4],
+        "country": "Australia",
+        "image_header": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPBCJrAJlZJfq2vST7gb-hK4JsHJsNbLRqH14guBA2A1wy25oZMC6SeDPxk4TfO9At0d-HSAYh68aUPeCKCmoeepSVfYgEP39jTwokKdO7SNbbz8FZ2HNf8PXJUtW4vJwT1G-zCkxojW2Ed0YBD39kE_XcuHkrnaAfODf0a8NMmNOzecN_oFwmdI3ZuJU/w1200-h630-p-k-no-nu/australian%20award.jpg"
     },
     {
         "title": "Beasiswa Kaltim Stimulan untuk Siswa SD, SMP, SMA/SMK, Pesantren Sederajat & Mahasiswa S1, S2, S3, Profesi & Spesialis",
@@ -231,7 +281,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-kaltim-stimulan/",
         "enroll_link": "https://beasiswa.kaltimprov.go.id/",
         "end_scholarship_date": "2025-04-30",
-        "category_id": [2, 3, 4]
+        "category_id": [2, 3, 4],
+        "country": "Indonesia",
+        "image_header": "https://media.kompas.tv/library/image/content_article/article_img/20230716015229.jpg"
     },
     {
         "title": "Beasiswa S2 Prancis oleh Pemerintah Prancis – IFI",
@@ -240,7 +292,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s2-prancis-france-excellence/",
         "enroll_link": "https://www.ifi-id.com/program-beasiswa-france-excellence-tematik-2024-ifi-kedutaan-besar-prancis-di-indonesia/",
         "end_scholarship_date": "2025-04-30",
-        "category_id": [3]
+        "category_id": [3],
+        "country": "French",
+        "image_header": "https://campuspedia.id/news/wp-content/uploads/2020/06/5-destinasi-wisata-prancis-yang-tak-kalah-indah-dari-paris-1908071_3x2.jpg"
     },
     {
         "title": "Beasiswa France Excellence Kuliah D3 dan S1 di Prancis",
@@ -249,7 +303,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-france-excellence-d3-s1/",
         "enroll_link": "https://www.ifi-id.com/program-beasiswa-france-excellence-s1-2024-ifi-kedutaan-besar-prancis-di-indonesia/#/",
         "end_scholarship_date": "2025-04-30",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "French",
+        "image_header": "https://www.ultimateducation.co.id/wp-content/uploads/2023/12/image-4.jpeg"
     },
     {
         "title": "Beasiswa S2 KOMINFO Dalam Negeri untuk Masyarakat UMUM, PNS/TNI/POLRI",
@@ -258,7 +314,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s2-kominfo/",
         "enroll_link": "https://beasiswa.kominfo.go.id/",
         "end_scholarship_date": "2025-04-30",
-        "category_id": [3]
+        "category_id": [3],
+        "country": "Indonesia",
+        "image_header": "https://www.nesiatimes.com/wp-content/uploads/2024/07/Beasiswa-900x641.jpg"
     },
     {
         "title": "Beasiswa UHW Perbanas Kuliah Gratis D3 dan S1 untuk Lulusan SMA/Sederajat",
@@ -267,7 +325,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-uhw-perbanas/",
         "enroll_link": "https://spmb.perbanas.ac.id/",
         "end_scholarship_date": "2025-05-30",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indonesia",
+        "image_header": "https://images.murianews.com/data/2024/12/image-20241226052447.jpg"
     },
     {
         "title": "Beasiswa CIMB ASEAN untuk Mahasiswa S1 dan S2 (Baru dan On-Going)",
@@ -276,7 +336,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-cimb-asean-mahasiswa-s1/",
         "enroll_link": "https://www.cimb.com/en/careers/students/cimb-asean-scholarship.html",
         "end_scholarship_date": "2025-06-30",
-        "category_id": [2, 3]
+        "category_id": [2, 3],
+        "country": "Indonesia",
+        "image_header": "https://assets.pikiran-rakyat.com/crop/0x0:0x0/1200x675/photo/2024/05/16/428686700.jpg"
     },
     {
         "title": "Beasiswa Gratis Kuliah S1 di Binus University Online oleh MCF-MAF",
@@ -285,7 +347,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s1-binus-mcf-maf/",
         "enroll_link": "http://bit.ly/Beasiswa-MACF",
         "end_scholarship_date": "2025-06-30",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indonesia",
+        "image_header": "https://assets.universitas123.com/images/353/Artikel%2011/Beasiswa%20MCF%20Binus%20Online%20Learning%20untuk%20Kuliah%20S1.jpg"
     },
     {
         "title": "Beasiswa S3 UNHAN (Universitas Pertahanan) FULL Scholarship",
@@ -294,7 +358,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s3-unhan/",
         "enroll_link": "https://penerimaan.idu.ac.id/beranda",
         "end_scholarship_date": "2025-06-15",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indonesia",
+        "image_header": "https://aspek.id/wp-content/uploads/2021/05/WhatsApp-Image-2021-05-09-at-14.53.29-1084x570.jpeg"
     },
     {
         "title": "Beasiswa Pemerintah Malaysia (MIS) Kuliah S2 – S3",
@@ -303,7 +369,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-pemerintah-malaysia/",
         "enroll_link": "https://biasiswa.mohe.gov.my/INTER/login.php",
         "end_scholarship_date": "2025-06-30",
-        "category_id": [3, 4]
+        "category_id": [3, 4],
+        "country": "Malaysia",
+        "image_header": "https://asset.kompas.com/crops/ArV1j-IL5hsNI62GgpUoW-icef4=/124x6:996x587/1200x800/data/photo/2017/07/04/1677182863.JPG"
     },
     {
         "title": "Beasiswa Universitas Paramadina Gratis Kuliah S1 Tahun 2025 untuk Lulusan SMA/sederajat Tahun 2023, 2024, 2025",
@@ -312,7 +380,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-universitas-paramadina/",
         "enroll_link": "http://bit.ly/ParamadinaFellowship2025",
         "end_scholarship_date": "2025-07-19",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indoensia",
+        "image_header": "https://kuliahkaryawanmurah.com/wp-content/uploads/2024/06/2023-09-25.jpg"
     },
     {
         "title": "Beasiswa S2 Manajemen oleh PPM School of Management",
@@ -321,7 +391,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s2-manajemen-ppm-management/",
         "enroll_link": "https://ppmschool.ac.id/beasiswa-the-future-leader/",
         "end_scholarship_date": "2025-07-19",
-        "category_id": [3]
+        "category_id": [3],
+        "country": "Indoensia",
+        "image_header": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPH9d7GYjQeGdRgJ9NPUUDvaXafuGJ67gF-Q&s"
     },
     {
         "title": "Beasiswa UNPAD Kuliah S2 – S3 untuk Masyarakat Umum",
@@ -330,7 +402,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-unpad-s2-s3/",
         "enroll_link": "http://pip.unpad.ac.id/announcement/Tes-Kemampuan-Akademik-TKA",
         "end_scholarship_date": "2025-07-19",
-        "category_id": [3, 4]
+        "category_id": [3, 4],
+        "country": "Indoensia",
+        "image_header": "https://asset.kompas.com/crops/PSw9iDdUY1mn_SMdq6UA-CiNfOs=/0x0:650x433/1200x800/data/photo/2022/07/17/62d3c7a9c5a05.jpg"
     },
     {
         "title": "Beasiswa S2 KOMINFO untuk 10 kampus tujuan di Dalam Negeri",
@@ -339,7 +413,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-s2-kominfo/",
         "enroll_link": "https://beasiswa.kominfo.go.id/",
         "end_scholarship_date": "2025-07-19",
-        "category_id": [3]
+        "category_id": [3],
+        "country": "Indoensia",
+        "image_header": "https://media.suara.com/pictures/970x544/2020/07/19/95092-ilustrasi-beasiswa.jpg"
     },
     {
         "title": "Beasiswa CIMB Niaga untuk Mahasiswa S1/D4 Semester 5 di seluruh Indonesia",
@@ -348,7 +424,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-cimb-niaga-untuk-mahasiswa-s1/",
         "enroll_link": "https://kejarmimpi.id/beasiswacimbniaga/",
         "end_scholarship_date": "2025-08-31",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indoensia",
+        "image_header": "https://kejarmimpi.id/uploads/img_article/large_20190809054333.jpg"
     },
     {
         "title": "Beasiswa untuk Mahasiswa D4/S1 Semester 1 Program Bright YBM BRILiaN",
@@ -357,7 +435,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-bright-ybm-brilian/",
         "enroll_link": "https://brilianscholarship.id/bright/pendaftaran",
         "end_scholarship_date": "2025-09-15",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indoensia",
+        "image_header": "https://is3.cloudhost.id/ybmbri/detail-beasiswa/detail-beasiswa1724294738.jpg"
     },
     {
         "title": "Beasiswa President University Kuliah S1 untuk Lulusan SMA/SMK/Sederajat",
@@ -366,7 +446,9 @@
         "information_link": "https://indbeasiswa.com/informasi-beasiswa-president-university/",
         "enroll_link": "https://presunivcenter.com/latereg/s0124",
         "end_scholarship_date": "2025-09-15",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indoensia",
+        "image_header": "https://campuspedia.id/news/wp-content/uploads/2020/07/hb-720x375.jpg"
     },
     {
         "title": "Beasiswa Tanoto Foundation untuk Mahasiswa S1 Semester 1",
@@ -375,7 +457,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-tanoto-foundation-teladan/",
         "enroll_link": "https://www.tanotofoundation.org/id/teladan-2025/",
         "end_scholarship_date": "2025-10-15",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indoensia",
+        "image_header": "https://awsimages.detik.net.id/community/media/visual/2023/08/23/beasiswa-tanoto-foundation-teladan-2024-dibuka.jpeg?w=1200"
     },
     {
         "title": "Bantuan Dana Penelitian untuk Mahasiswa S1 Program Indofood Riset Nugraha",
@@ -384,7 +468,9 @@
         "information_link": "https://indbeasiswa.com/indofood-riset-nugraha-untuk-mahasiswa/",
         "enroll_link": "https://forms.gle/rV9EkRQ5kwUZqqAi8",
         "end_scholarship_date": "2025-10-15",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indoensia",
+        "image_header": "https://marketing.co.id/wp-content/uploads/2024/11/Foto-bersama-scaled.jpg"
     },
     {
         "title": "Beasiswa Bakti BCA untuk Mahasiswa S1 Semester 3 Seluruh Indonesia",
@@ -393,7 +479,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-bakti-bca-untuk-mahasiswa/",
         "enroll_link": "https://beasiswabaktibca.bca.co.id/",
         "end_scholarship_date": "2025-10-31",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "Indoensia",
+        "image_header": "https://foto.kontan.co.id/1oXbmX9OsppWF_U-RzGflvDUxgI=/smart/2024/09/10/967558419p.jpg"
     },
     {
         "title": "Beasiswa INPEX untuk Kuliah S2 di Jepang",
@@ -402,7 +490,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-inpex-kuliah-s2-jepang/",
         "enroll_link": "https://indbeasiswa.com/beasiswa-inpex-kuliah-s2-jepang/",
         "end_scholarship_date": "2025-10-31",
-        "category_id": [3]
+        "category_id": [3],
+        "country": "Japan",
+        "image_header": "https://campusnet.news/wp-content/uploads/2024/09/japanese-business-concept-with-business-person-1024x683.jpg"
     },
     {
         "title": "Beasiswa 2025 Chevening Scholarship Kuliah S2 di Inggris FULL Scholarship",
@@ -411,7 +501,10 @@
         "information_link": "https://indbeasiswa.com/beasiswa-chevening-kuliah-s2-inggris/",
         "enroll_link": "https://www.chevening.org/scholarship/indonesia/",
         "end_scholarship_date": "2025-11-05",
-        "category_id": [3]
+        "category_id": [3],
+        "country": "England",
+        "image_header": "https://ieltspresso.com/wp-content/uploads/2023/08/Blog-1.jpg"
+
     },
     {
         "title": "Beasiswa OSC 2024 Gratis Kuliah S1 untuk Lulusan SMA/SMK/MA/sederajat dan Santri (dibuka untuk lulusan 2023, 2024 dan 2025)",
@@ -420,7 +513,10 @@
         "information_link": "https://indbeasiswa.com/beasiswa-osc-s1-s2-beasiswa-penuh/",
         "enroll_link": "https://osc.medcom.id/register",
         "end_scholarship_date": "2025-11-06",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "indonesia",
+        "image_header": "https://asset.kompas.com/crops/KxGJOFjHVwfpOlcgAgtJ8kUyHJ4=/0x0:1000x667/1200x800/data/photo/2022/05/11/627bc137ec4dd.jpg"
+
     },
     {
         "title": "Beasiswa Pemerintah Kota Blitar untuk Mahasiswa D4 dan S1",
@@ -429,7 +525,9 @@
         "information_link": "https://indbeasiswa.com/beasiswa-kota-blitar-untuk-mahasiswa/",
         "enroll_link": "https://beasiswa.blitarkota.go.id/formulir-beasiswa",
         "end_scholarship_date": "2025-11-06",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "indonesia",
+        "image_header": "https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2022/02/19/4209954822.jpg"
     },
     {
         "title": "Beasiswa ABP Shizuoka Tahun 2025 Kuliah S1 di Jepang",
@@ -438,7 +536,10 @@
         "information_link": "https://indbeasiswa.com/beasiswa-abp-shizuoka-kuliah-s1-jepang/",
         "enroll_link": "https://www.abp.icsu.shizuoka.ac.jp/eng/",
         "end_scholarship_date": "2025-11-29",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "japan",
+        "image_header": "https://www.kalderanews.com/wp-content/uploads/2021/02/Ilustrasi-Alasan-memilih-jurusan-Ekonomi-Syariah.-600x381.jpg"
+
     },
     {
         "title": "Beasiswa Bank Mega Syariah untuk mahasiswa D4/S1 minimal semester 3",
@@ -447,16 +548,19 @@
         "information_link": "https://indbeasiswa.com/beasiswa-bank-mega-syariah/",
         "enroll_link": "https://bit.ly/PendaftaranBeasiswaBMS2025",
         "end_scholarship_date": "2025-11-29",
-        "category_id": [2]
+        "category_id": [2],
+        "country": "indonesia",
+        "image_header": "https://www.kalderanews.com/wp-content/uploads/2021/02/Ilustrasi-Alasan-memilih-jurusan-Ekonomi-Syariah.-600x381.jpg"
     },
     {
         "title": "Beasiswa DataPrint Tahun 2024 Periode 4 untuk Mahasiswa D3, D4, S1 dan Pelajar SMP, SMA/SMK/Sederajat",
         "description": "Bentuk Beasiswa: Bantuan dana Rp 500.000,- bagi masing-masing penerima beasiswa.",
         "image_url": "https://dataprint.co.id/wp-content/uploads/2024/10/pembukaan-bea-periode-4-tahun-2024-fix_01-1-768x768.jpg",
-        "image_header": "https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/288/2024/01/21/IMG_20240121_045415-901893789.jpg",
         "information_link": "https://indbeasiswa.com/beasiswa-dataprint/",
         "enroll_link": "https://beasiswadataprint.com/formulir-pendaftaran/",
         "end_scholarship_date": "2025-11-30",
-        "category_id": [1, 2]
+        "category_id": [1, 2],
+        "country": "indonesia",
+        "image_header": "https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/288/2024/01/21/IMG_20240121_045415-901893789.jpg"
     }
 ]
