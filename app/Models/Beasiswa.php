@@ -25,6 +25,8 @@ class Beasiswa extends Model
         'image_url',
         'information_link',
         'enroll_link',
-        'end_scholarship_date'
+        'end_scholarship_date',
+        'country',
+        'image_header'
     ];
 }

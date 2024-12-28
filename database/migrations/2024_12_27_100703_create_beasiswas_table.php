@@ -20,6 +20,8 @@ return new class extends Migration
             $table->text('information_link');
             $table->text('enroll_link');
             $table->date('end_scholarship_date');
+            $table->string('country');
+            $table->text('image_header');
         });
     }
 
