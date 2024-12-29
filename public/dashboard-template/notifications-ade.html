@@ -10,13 +10,13 @@
 
     <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
-    <link rel="shortcut icon" href="/dashboard-template/favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
 
     <!-- FontAwesome JS-->
-    <script defer src="/dashboard-template/assets/plugins/fontawesome/js/all.min.js"></script>
+    <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
 
     <!-- App CSS -->
-    <link id="theme-style" rel="stylesheet" href="/dashboard-template/assets/css/portal.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 
 </head>
 
@@ -61,7 +61,7 @@
 							       <div class="item p-3">
 								        <div class="row gx-2 justify-content-between align-items-center">
 									        <div class="col-auto">
-										       <img class="profile-image" src="/dashboard-template/assets/images/profiles/profile-1.png" alt="">
+										       <img class="profile-image" src="assets/images/profiles/profile-1.png" alt="">
 									        </div><!--//col-->
 									        <div class="col">
 										        <div class="info">
@@ -112,7 +112,7 @@
 							       <div class="item p-3">
 								        <div class="row gx-2 justify-content-between align-items-center">
 									        <div class="col-auto">
-										       <img class="profile-image" src="/dashboard-template/assets/images/profiles/profile-2.png" alt="">
+										       <img class="profile-image" src="assets/images/profiles/profile-2.png" alt="">
 									        </div><!--//col-->
 									        <div class="col">
 										        <div class="info">
@@ -121,7 +121,7 @@
 										        </div>
 									        </div><!--//col-->
 								        </div><!--//row-->
-								        <a class="link-mask" href="notifications.html"></a>
+								        <a class="link-mask" href="#"></a>
 							       </div><!--//item-->
 						        </div><!--//dropdown-menu-content-->
 
@@ -142,40 +142,32 @@
 					    </div><!--//app-utility-item-->
 
 			            <div class="app-utility-item app-user-dropdown dropdown">
-				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="/dashboard-template/assets/images/user.png" alt="user profile"></a>
+				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="assets/images/user.png" alt="user profile"></a>
 				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
 								<li><a class="dropdown-item" href="account.html">Account</a></li>
 								<li><a class="dropdown-item" href="settings.html">Settings</a></li>
 								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item"">                                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item" style="background: none; border: none; padding: 0; cursor: pointer;">
-                                            Log Out
-                                        </button>
-                                    </form>
-                                    </a></li>
-
-                            </ul>
+								<li><a class="dropdown-item" href="login.html">Log Out</a></li>
+							</ul>
 			            </div><!--//app-user-dropdown-->
 		            </div><!--//app-utilities-->
 		        </div><!--//row-->
 	            </div><!--//app-header-content-->
 	        </div><!--//container-fluid-->
         </div><!--//app-header-inner-->
-        <div id="app-sidepanel" class="app-sidepanel">
+        <div id="app-sidepanel" class="app-sidepanel sidepanel-hidden">
 	        <div id="sidepanel-drop" class="sidepanel-drop"></div>
 	        <div class="sidepanel-inner d-flex flex-column">
 		        <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 		        <div class="app-branding">
-		            <a class="app-logo" href="index.html"><img class="logo-icon me-2" src="/dashboard-template/assets/images/app-logo.svg" alt="logo"><span class="logo-text">PORTAL</span></a>
+		            <a class="app-logo" href="index.bak.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"><span class="logo-text">PORTAL</span></a>
 
 		        </div><!--//app-branding-->
-
 			    <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
 				    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link active" href="index.html">
+					        <a class="nav-link" href="index.bak.html">
 						        <span class="nav-icon">
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		  <path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"/>
@@ -214,7 +206,7 @@
 					    </li><!--//nav-item-->
 					    <li class="nav-item has-submenu">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1" aria-expanded="false" aria-controls="submenu-1">
+					        <a class="nav-link submenu-toggle active" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1" aria-expanded="true" aria-controls="submenu-1">
 						        <span class="nav-icon">
 						        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-files" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -229,11 +221,12 @@
 	</svg>
 	                             </span><!--//submenu-arrow-->
 					        </a><!--//nav-link-->
-					        <div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
+					        <div id="submenu-1" class="collapse submenu submenu-1 show" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
-							        <li class="submenu-item"><a class="submenu-link" href="notifications.html">Notifications</a></li>
+							        <li class="submenu-item"><a class="submenu-link active" href="notifications.html">Notifications</a></li>
 							        <li class="submenu-item"><a class="submenu-link" href="account.html">Account</a></li>
 							        <li class="submenu-item"><a class="submenu-link" href="settings.html">Settings</a></li>
+
 						        </ul>
 					        </div>
 					    </li><!--//nav-item-->
@@ -263,7 +256,6 @@
 					        </div>
 					    </li><!--//nav-item-->
 
-
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 					        <a class="nav-link" href="charts.html">
@@ -275,10 +267,9 @@
 		                         <span class="nav-link-text">Charts</span>
 					        </a><!--//nav-link-->
 					    </li><!--//nav-item-->
-
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link" href="help.blade.php">
+					        <a class="nav-link" href="help.html">
 						        <span class="nav-icon">
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -332,7 +323,6 @@
 					    </ul><!--//footer-menu-->
 				    </nav>
 			    </div><!--//app-sidepanel-footer-->
-
 	        </div><!--//sidepanel-inner-->
 	    </div><!--//app-sidepanel-->
     </header><!--//app-header-->
@@ -341,65 +331,119 @@
 
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
 		    <div class="container-xl">
+			    <div class="position-relative mb-3">
+				    <div class="row g-3 justify-content-between">
+					    <div class="col-auto">
+					        <h1 class="app-page-title mb-0">Notifications</h1>
+					    </div>
+					    <div class="col-auto">
+					        <div class="page-utilities">
+							    <select class="form-select form-select-sm w-auto" >
+								  <option selected value="option-1">All</option>
+								  <option value="option-2">News</option>
+								  <option value="option-3">Product</option>
+								  <option value="option-4">Project</option>
+								  <option value="option-4">Billing</option>
+								</select>
+					        </div><!--//page-utilities-->
+					    </div>
+				    </div>
+			    </div>
 
-			    <h1 class="app-page-title">Overview</h1>
+                <div class="app-card app-card-notification shadow-sm mb-4">
+				    <div class="app-card-header px-4 py-3">
+				        <div class="row g-3 align-items-center">
+					        <div class="col-12 col-lg-auto text-center text-lg-start">
+				                <img class="profile-image" src="assets/images/kelapa-admin.svg" alt="">
+					        </div><!--//col-->
+					        <div class="col-12 col-lg-auto text-center text-lg-start">
+						        <h4 class="notification-title mb-1">📚 PENDAFTARAN BEASISWA SMA DIBUKA!</h4>
 
-			    <div class="app-card alert alert-dismissible shadow-sm mb-4 border-left-decoration" role="alert">
-				    <div class="inner">
-					    <div class="app-card-body p-3 p-lg-4">
-						    <h3 class="mb-3">Welcome, Alexander Immanuel Great!</h3>
-						    <div class="row gx-5 gy-3">
-						        <div class="col-12 col-lg-9">
+						        <ul class="notification-meta list-inline mb-0">
+							        <li class="list-inline-item">2 hrs ago</li>
+							        <li class="list-inline-item">|</li>
+							        <li class="list-inline-item">Admin Scholarzone</li>
+						        </ul>
 
-							        <div>Selamat datang di Dashboard Informasi Beasiswa! Di sini, Anda dapat dengan mudah mengakses berbagai informasi beasiswa terbaru yang tersedia. Dashboard ini dirancang dengan antarmuka yang sederhana dan intuitif, sehingga memudahkan Anda untuk menemukan beasiswa yang sesuai dengan kebutuhan Anda. Temukan peluang beasiswa, kelola aplikasi, dan pantau perkembangan dengan lebih efisien melalui dashboard ini ☺️.</div>
-							    </div><!--//col-->
-						    </div><!--//row-->
-					    </div><!--//app-card-body-->
+					        </div><!--//col-->
+				        </div><!--//row-->
+				    </div><!--//app-card-header-->
+				    <div class="app-card-body p-4">
+					    <div class="notification-content">
+							Kesempatan emas untuk melanjutkan pendidikan ke jenjang SMA dengan beasiswa penuh! Pendaftaran telah dibuka hari ini. Jangan lewatkan kesempatan ini untuk mewujudkan impian pendidikanmu. 
+						</div>
+				    </div><!--//app-card-body-->
+				    <div class="app-card-footer px-4 py-3">
+					    <a class="action-link" href="#">View all<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right ms-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+</svg></a>
+				    </div><!--//app-card-footer-->
+				</div><!--//app-card-->
 
-				    </div><!--//inner-->
-			    </div><!--//app-card-->
+				<div class="app-card app-card-notification shadow-sm mb-4">
+					<div class="app-card-header px-4 py-3">
+						<div class="row g-3 align-items-center">
+							<div class="col-12 col-lg-auto text-center text-lg-start">
+								<img class="profile-image" src="assets/images/kelapa-admin.svg" alt="">
+							</div><!--//col-->
+							<div class="col-12 col-lg-auto text-center text-lg-start">
+								<h4 class="notification-title mb-1">📚 PENDAFTARAN BEASISWA SMA DIBUKA!</h4>
 
-			    <div class="row g-4 mb-4">
-				    <div class="col-6 col-lg-3">
-					    <div class="app-card app-card-stat shadow-sm h-100">
-						    <div class="app-card-body p-3 p-lg-4">
-							    <h4 class="stats-type mb-1">🎓 Total Beasiswa SMA</h4>
-							    <div class="stats-figure">100</div>
-						    </div><!--//app-card-body-->
-						    <a class="app-card-link-mask" href="#"></a>
-					    </div><!--//app-card-->
-				    </div><!--//col-->
-					<div class="col-6 col-lg-3">
-						<div class="app-card app-card-stat shadow-sm h-100">
-							<div class="app-card-body p-3 p-lg-4">
-								<h4 class="stats-type mb-1">🎓 Total Beasiswa S1</h4>
-								<div class="stats-figure">100</div>
-							</div><!--//app-card-body-->
-							<a class="app-card-link-mask" href="#"></a>
-						</div><!--//app-card-->
-					</div><!--//col-->
-					<div class="col-6 col-lg-3">
-						<div class="app-card app-card-stat shadow-sm h-100">
-							<div class="app-card-body p-3 p-lg-4">
-								<h4 class="stats-type mb-1">🎓 Total Beasiswa S2</h4>
-								<div class="stats-figure">100</div>
-							</div><!--//app-card-body-->
-							<a class="app-card-link-mask" href="#"></a>
-						</div><!--//app-card-->
-					</div><!--//col-->
-					<div class="col-6 col-lg-3">
-						<div class="app-card app-card-stat shadow-sm h-100">
-							<div class="app-card-body p-3 p-lg-4">
-								<h4 class="stats-type mb-1">🎓 Total Beasiswa S3</h4>
-								<div class="stats-figure">100</div>
-							</div><!--//app-card-body-->
-							<a class="app-card-link-mask" href="#"></a>
-						</div><!--//app-card-->
-					</div><!--//col-->
+								<ul class="notification-meta list-inline mb-0">
+									<li class="list-inline-item">2 hrs ago</li>
+									<li class="list-inline-item">|</li>
+									<li class="list-inline-item">Admin Scholarzone</li>
+								</ul>
 
-				</div><!--//row-->
+							</div><!--//col-->
+						</div><!--//row-->
+					</div><!--//app-card-header-->
+					<div class="app-card-body p-4">
+						<div class="notification-content">
+							Kesempatan emas untuk melanjutkan pendidikan ke jenjang SMA dengan beasiswa penuh! Pendaftaran telah dibuka hari ini. Jangan lewatkan kesempatan ini untuk mewujudkan impian pendidikanmu. 
+						</div>
+					</div><!--//app-card-body-->
+					<div class="app-card-footer px-4 py-3">
+						<a class="action-link" href="#">View all<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right ms-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+						</svg></a>
+					</div><!--//app-card-footer-->
+				</div><!--//app-card-->
 
-		    </div><!--//container-fluid-->
+				<div class="app-card app-card-notification shadow-sm mb-4">
+					<div class="app-card-header px-4 py-3">
+						<div class="row g-3 align-items-center">
+							<div class="col-12 col-lg-auto text-center text-lg-start">
+								<img class="profile-image" src="assets/images/kelapa-admin.svg" alt="">
+							</div><!--//col-->
+							<div class="col-12 col-lg-auto text-center text-lg-start">
+								<h4 class="notification-title mb-1">📚 PENDAFTARAN BEASISWA SMA DIBUKA!</h4>
+
+								<ul class="notification-meta list-inline mb-0">
+									<li class="list-inline-item">2 hrs ago</li>
+									<li class="list-inline-item">|</li>
+									<li class="list-inline-item">Admin Scholarzone</li>
+								</ul>
+
+							</div><!--//col-->
+						</div><!--//row-->
+					</div><!--//app-card-header-->
+					<div class="app-card-body p-4">
+						<div class="notification-content">
+							Kesempatan emas untuk melanjutkan pendidikan ke jenjang SMA dengan beasiswa penuh! Pendaftaran telah dibuka hari ini. Jangan lewatkan kesempatan ini untuk mewujudkan impian pendidikanmu. 
+						</div>
+					</div><!--//app-card-body-->
+					<div class="app-card-footer px-4 py-3">
+						<a class="action-link" href="#">View all<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right ms-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+						</svg></a>
+					</div><!--//app-card-footer-->
+				</div><!--//app-card-->
+
+
+
+
+			</div><!--//container-fluid-->
 	    </div><!--//app-content-->
 
 
@@ -407,15 +451,11 @@
 
 
     <!-- Javascript -->
-    <script src="/dashboard-template/assets/plugins/popper.min.js"></script>
-    <script src="/dashboard-template/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Charts JS -->
-    <script src="/dashboard-template/assets/plugins/chart.js/chart.min.js"></script>
-    <script src="/dashboard-template/assets/js/index-charts.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Page Specific JS -->
-    <script src="/dashboard-template/assets/js/app.js"></script>
+    <script src="assets/js/app.js"></script>
 
 </body>
 </html>

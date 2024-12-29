@@ -116,7 +116,7 @@ https://templatemo.com/tm-586-scholar
                       <li class="scroll-to-section"><a href="#services">Services</a></li>
                       <li class="scroll-to-section"><a href="#courses">Scholarship</a></li>
                       <li class="scroll-to-section"><a href="#schedules">Schedules</a></li>
-                      <li class="scroll-to-section"><a href="#login">Login</a></li>
+                      <li class="scroll-to-section"><a href="{{route('login')}}">Login</a></li>
                   </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
