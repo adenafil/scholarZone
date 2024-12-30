@@ -30,7 +30,7 @@ class DashboardController extends Controller
     }
 
     public function scholarships() {
-        return response()->view('dashboard.scholarships');
+        return response()->view('dashboard.scholarship');
     }
 
     public function documents() {

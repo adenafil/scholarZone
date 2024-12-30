@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
     <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
-    
+
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
-    <link rel="shortcut icon" href="favicon.ico"> 
-    
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+    <link rel="shortcut icon" href="/dashboard-template/favicon.ico">
+
     <!-- FontAwesome JS-->
-    <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
-    
-    <!-- App CSS -->  
-    <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
+    <script defer src="/dashboard-template/assets/plugins/fontawesome/js/all.min.js"></script>
 
-</head> 
+    <!-- App CSS -->
+    <link id="theme-style" rel="stylesheet" href="/dashboard-template/assets/css/portal.css">
 
-<body class="app">   	
-    <header class="app-header fixed-top">	   	            
-        <div class="app-header-inner">  
+</head>
+
+<body class="app">
+    <header class="app-header fixed-top">
+        <div class="app-header-inner">
 	        <div class="container-fluid py-2">
-		        <div class="app-header-content"> 
+		        <div class="app-header-content">
 		            <div class="row justify-content-between align-items-center">
-			        
+
 				    <div class="col-auto">
 					    <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
 						    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg>
@@ -36,14 +36,14 @@
 			            <i class="search-mobile-trigger-icon fa-solid fa-magnifying-glass"></i>
 			        </div><!--//col-->
 		            <div class="app-search-box col">
-		                <form class="app-search-form">   
+		                <form class="app-search-form">
 							<input type="text" placeholder="Search..." name="search" class="form-control search-input">
-							<button type="submit" class="btn search-btn btn-primary" value="Search"><i class="fa-solid fa-magnifying-glass"></i></button> 
+							<button type="submit" class="btn search-btn btn-primary" value="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
 				        </form>
 		            </div><!--//app-search-box-->
-		            
+
 		            <div class="app-utilities col-auto">
-			            <div class="app-utility-item app-notifications-dropdown dropdown">    
+			            <div class="app-utility-item app-notifications-dropdown dropdown">
 				            <a class="dropdown-toggle no-toggle-arrow" id="notifications-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" title="Notifications">
 					            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 					            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +52,7 @@
 </svg>
 					            <span class="icon-badge">3</span>
 					        </a><!--//dropdown-toggle-->
-					        
+
 					        <div class="dropdown-menu p-0" aria-labelledby="notifications-dropdown-toggle">
 					            <div class="dropdown-menu-header p-3">
 						            <h5 class="dropdown-menu-title mb-0">Notifications</h5>
@@ -61,14 +61,14 @@
 							       <div class="item p-3">
 								        <div class="row gx-2 justify-content-between align-items-center">
 									        <div class="col-auto">
-										       <img class="profile-image" src="assets/images/profiles/profile-1.png" alt="">
+										       <img class="profile-image" src="/dashboard-template/assets/images/profiles/profile-1.png" alt="">
 									        </div><!--//col-->
 									        <div class="col">
-										        <div class="info"> 
+										        <div class="info">
 											        <div class="desc">Amy shared a file with you. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
 											        <div class="meta"> 2 hrs ago</div>
 										        </div>
-									        </div><!--//col--> 
+									        </div><!--//col-->
 								        </div><!--//row-->
 								        <a class="link-mask" href="notifications.html"></a>
 							       </div><!--//item-->
@@ -83,7 +83,7 @@
 										        </div>
 									        </div><!--//col-->
 									        <div class="col">
-										        <div class="info"> 
+										        <div class="info">
 											        <div class="desc">You have a new invoice. Proin venenatis interdum est.</div>
 											        <div class="meta"> 1 day ago</div>
 										        </div>
@@ -101,7 +101,7 @@
 										        </div>
 									        </div><!--//col-->
 									        <div class="col">
-										        <div class="info"> 
+										        <div class="info">
 											        <div class="desc">Your report is ready. Proin venenatis interdum est.</div>
 											        <div class="meta"> 3 days ago</div>
 										        </div>
@@ -112,24 +112,24 @@
 							       <div class="item p-3">
 								        <div class="row gx-2 justify-content-between align-items-center">
 									        <div class="col-auto">
-										       <img class="profile-image" src="assets/images/profiles/profile-2.png" alt="">
+										       <img class="profile-image" src="/dashboard-template/assets/images/profiles/profile-2.png" alt="">
 									        </div><!--//col-->
 									        <div class="col">
-										        <div class="info"> 
+										        <div class="info">
 											        <div class="desc">James sent you a new message.</div>
 											        <div class="meta"> 7 days ago</div>
 										        </div>
-									        </div><!--//col--> 
+									        </div><!--//col-->
 								        </div><!--//row-->
 								        <a class="link-mask" href="#"></a>
 							       </div><!--//item-->
 						        </div><!--//dropdown-menu-content-->
-						        
+
 						        <div class="dropdown-menu-footer p-2 text-center">
 							        <a href="notifications.html">View all</a>
 						        </div>
-															
-							</div><!--//dropdown-menu-->					        
+
+							</div><!--//dropdown-menu-->
 				        </div><!--//app-utility-item-->
 			            <div class="app-utility-item">
 				            <a href="settings.html" title="Settings">
@@ -140,29 +140,29 @@
 </svg>
 					        </a>
 					    </div><!--//app-utility-item-->
-			            
+
 			            <div class="app-utility-item app-user-dropdown dropdown">
-				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="assets/images/user.png" alt="user profile"></a>
+				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="/dashboard-template/assets/images/user.png" alt="user profile"></a>
 				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
 								<li><a class="dropdown-item" href="account.html">Account</a></li>
 								<li><a class="dropdown-item" href="settings.html">Settings</a></li>
 								<li><hr class="dropdown-divider"></li>
 								<li><a class="dropdown-item" href="login.html">Log Out</a></li>
 							</ul>
-			            </div><!--//app-user-dropdown-->  
+			            </div><!--//app-user-dropdown-->
 		            </div><!--//app-utilities-->
 		        </div><!--//row-->
 	            </div><!--//app-header-content-->
 	        </div><!--//container-fluid-->
         </div><!--//app-header-inner-->
-        <div id="app-sidepanel" class="app-sidepanel sidepanel-hidden"> 
+        <div id="app-sidepanel" class="app-sidepanel sidepanel-hidden">
 	        <div id="sidepanel-drop" class="sidepanel-drop"></div>
 	        <div class="sidepanel-inner d-flex flex-column">
 		        <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 		        <div class="app-branding">
-		            <a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"><span class="logo-text">PORTAL</span></a>
-	
-		        </div><!--//app-branding-->  
+		            <a class="app-logo" href="index.html"><img class="logo-icon me-2" src="/dashboard-template/assets/images/app-logo.svg" alt="logo"><span class="logo-text">PORTAL</span></a>
+
+		        </div><!--//app-branding-->
 			    <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
 				    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
 					    <li class="nav-item">
@@ -226,7 +226,7 @@
 							        <li class="submenu-item"><a class="submenu-link" href="notifications.html">Notifications</a></li>
 							        <li class="submenu-item"><a class="submenu-link" href="account.html">Account</a></li>
 							        <li class="submenu-item"><a class="submenu-link" href="settings.html">Settings</a></li>
-							        
+
 						        </ul>
 					        </div>
 					    </li><!--//nav-item-->
@@ -255,7 +255,7 @@
 						        </ul>
 					        </div>
 					    </li><!--//nav-item-->
-					    
+
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 					        <a class="nav-link" href="charts.html">
@@ -326,12 +326,12 @@
 	        </div><!--//sidepanel-inner-->
 	    </div><!--//app-sidepanel-->
     </header><!--//app-header-->
-    
+
     <div class="app-wrapper">
-	    
+
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
 		    <div class="container-xl">
-			    
+
 			    <h1 class="app-page-title">Help Center</h1>
                 <div class="app-card app-card-accordion shadow-sm mb-4">
 				    <div class="app-card-header p-4 pb-2  border-0">
@@ -339,7 +339,7 @@
 				    </div><!--//app-card-header-->
 				    <div class="app-card-body p-4 pt-0">
 					    <div id="faq1-accordion" class="faq1-accordion faq-accordion accordion">
-						    
+
 						    <div class="accordion-item">
 							    <h2 class="accordion-header" id="faq1-heading-1">
 							      <button class="accordion-button btn btn-link" type="button" data-bs-toggle="collapse"  data-bs-target="#faq1-1" aria-expanded="false" aria-controls="faq1-1">
@@ -354,7 +354,7 @@
 										• S2 dan S3: Ijazah S1/S2, transkrip nilai, proposal penelitian (untuk S3), dan surat rekomendasi akademik.							        </div>
 							    </div>
 							</div><!--//accordion-item-->
-						    
+
 						    <div class="accordion-item">
 							    <h2 class="accordion-header" id="faq1-heading-2">
 							      <button class="accordion-button btn btn-link" type="button" data-bs-toggle="collapse"  data-bs-target="#faq1-2" aria-expanded="false" aria-controls="faq1-2">
@@ -370,8 +370,8 @@
 										Pastikan semua dokumen dalam format yang diminta (PDF atau JPG) dan tidak melebihi batas ukuran file.							        </div>
 							    </div>
 							</div><!--//accordion-item-->
-						    
-						    
+
+
 						    <div class="accordion-item">
 							    <h2 class="accordion-header" id="faq1-heading-3">
 							      <button class="accordion-button btn btn-link" type="button" data-bs-toggle="collapse"  data-bs-target="#faq1-3" aria-expanded="false" aria-controls="faq1-3">
@@ -386,7 +386,7 @@
 										- Minta surat rekomendasi setidaknya dua minggu sebelum tenggat waktu untuk menghindari keterlambatan.							        </div>
 							    </div>
 							</div><!--//accordion-item-->
-							
+
 							<div class="accordion-item">
 							    <h2 class="accordion-header" id="faq1-heading-4">
 							      <button class="accordion-button btn btn-link" type="button" data-bs-toggle="collapse"  data-bs-target="#faq1-4" aria-expanded="false" aria-controls="faq1-4">
@@ -402,7 +402,7 @@
 									</div>
 							    </div>
 							</div><!--//accordion-item-->
-							
+
 							<div class="accordion-item">
 							    <h2 class="accordion-header" id="faq1-heading-5">
 							      <button class="accordion-button btn btn-link" type="button" data-bs-toggle="collapse"  data-bs-target="#faq1-5" aria-expanded="false" aria-controls="faq1-5">
@@ -418,7 +418,7 @@
 									</div>
 							    </div>
 							</div><!--//accordion-item-->
-							
+
 							<div class="accordion-item">
 							    <h2 class="accordion-header" id="faq1-heading-6">
 							      <button class="accordion-button btn btn-link" type="button" data-bs-toggle="collapse"  data-bs-target="#faq1-6" aria-expanded="false" aria-controls="faq1-6">
@@ -435,7 +435,7 @@
 									</div>
 							    </div>
 							</div><!--//accordion-item-->
-							                  
+
 	                    </div><!--//faq1-accordion-->
 				    </div><!--//app-card-body-->
 				</div><!--//app-card-->
@@ -454,7 +454,7 @@
   <path d="M6.5 14a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1z"/>
 </svg>
 									    </div><!--//icon-holder-->
-						                
+
 							        </div><!--//col-->
 							        <div class="col-auto">
 								        <h4 class="app-card-title">Need more help?</h4>
@@ -462,7 +462,7 @@
 						        </div><!--//row-->
 						    </div><!--//app-card-header-->
 						    <div class="app-card-body px-4">
-							    
+
 							    <div class="intro mb-3">
 									Kami siap membantu Anda mendapatkan informasi lebih lanjut mengenai pendaftaran dan proses seleksi beasiswa dari SMA hingga S3. Jangan ragu untuk menghubungi kami jika ada kendala atau pertanyaan.
 								</div>
@@ -476,25 +476,25 @@
 								<a class="btn app-btn-secondary" style="color: white;
 background-color: #007bff;
 height: 40px;
-" href="#"><span><img src="assets/images/tele.svg" alt="" srcset=""></span> Join Our Community</a>
+" href="#"><span><img src="/dashboard-template/assets/images/tele.svg" alt="" srcset=""></span> Join Our Community</a>
 							</div><!--//app-card-footer-->
 						</div><!--//app-card-->
 					</div><!--//col-->
 				</div><!--//row-->
-			    
+
 		    </div><!--//container-fluid-->
 	    </div><!--//app-content-->
 
-    </div><!--//app-wrapper-->    					
+    </div><!--//app-wrapper-->
 
- 
-    <!-- Javascript -->          
-    <script src="assets/plugins/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
-    
+
+    <!-- Javascript -->
+    <script src="/dashboard-template/assets/plugins/popper.min.js"></script>
+    <script src="/dashboard-template/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
     <!-- Page Specific JS -->
-    <script src="assets/js/app.js"></script> 
+    <script src="/dashboard-template/assets/js/app.js"></script>
 
 </body>
-</html> 
+</html>
 

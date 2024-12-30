@@ -9,16 +9,23 @@ Route::controller(HomePageController::class)->group(function () {
     Route::get('/', 'index')->name('home');
 });
 
-Route::controller(DashboardController::class)->group(function () {
-    Route::get('/dashboard/overview', 'overview')->name('dashboard');
-    Route::get('/dashboard/applications', 'applications')->name('dashboard.applications');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::controller(DashboardController::class)->group(function () {
+        Route::get('/dashboard/overview', 'overview')->name('dashboard');
+        Route::get('/dashboard/applications', 'applications')->name('dashboard.applications');
+        Route::get('/dashboard/scholarships', 'scholarships')->name('dashboard.scholarships');
+        Route::get('/dashboard/documents', 'documents')->name('dashboard.documents');
+        Route::get('/dashboard/help', 'help')->name('dashboard.help');
+        Route::get('/dashboard/profile', 'profile')->name('dashboard.profile');
+        Route::get('/dashboard/notifications', 'notifications')->name('dashboard.notifications');
+    });
+
 });
 
 require __DIR__.'/auth.php';
