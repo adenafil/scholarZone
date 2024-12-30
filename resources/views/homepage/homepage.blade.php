@@ -63,13 +63,17 @@ https://templatemo.com/tm-586-scholar
         text-overflow: ellipsis; /* Menambahkan elipsis "..." pada teks yang dipotong */
       }
 
-      .main-banner .item-1 {
-        background-image: url(https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jurusan-di-kaist.webp);
-      }
+      /*.main-banner .item-1 {*/
+      /*  background-image: url(https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jurusan-di-kaist.webp);*/
+      /*}*/
 
-      .main-banner .item-2 {
-        background-image: url(https://awsimages.detik.net.id/community/media/visual/2023/11/01/sma-unggulan-ct-arsa-foundation-sukoharjo_169.jpeg?w=1200);
-      }
+      /*.main-banner .item-2 {*/
+      /*  background-image: url(https://awsimages.detik.net.id/community/media/visual/2023/11/01/sma-unggulan-ct-arsa-foundation-sukoharjo_169.jpeg?w=1200);*/
+      /*}*/
+
+      /*.main-banner .item-3 {*/
+      /*  background-image: url(https://awsimages.detik.net.id/community/media/visual/2023/11/01/sma-unggulan-ct-arsa-foundation-sukoharjo_169.jpeg?w=1200);*/
+      /*}*/
 
     </style>
   </head>
@@ -134,30 +138,25 @@ https://templatemo.com/tm-586-scholar
       <div class="row">
         <div class="col-lg-12">
           <div class="owl-carousel owl-banner">
-            <div class="item item-1">
-              <div class="header-text">
-                <span class="category">S1</span>
-                <h2 class="" data-bs-toggle="tooltip" title="Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year">Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST...</h2>
-                <p></p>
-                <div class="buttons">
-                  <div class="main-button">
-                    <a href="#">Apply Now</a>
+
+              @foreach ($beasiswas_header as $key => $scholarship)
+                  <div class="item item-{{$loop->iteration}}" style="background-image: url({{$scholarship->image_header}})">
+                      <div class="header-text">
+                          @foreach ($scholarship->categories as $key => $category)
+                              <span class="category">{{$category->name}}</span>
+                          @endforeach
+                          <h2 class="truncate" data-bs-toggle="tooltip" title="{{$scholarship->title}}">{{$scholarship->short_title }}</h2>
+                          <p class="truncate"  data-bs-toggle="tooltip" title="{{$scholarship->description}}">{{$scholarship->description}}</p>
+                          <div class="buttons">
+                              <div class="main-button">
+                                  <a href="{{$scholarship->enroll_link}}">Apply Now</a>
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="item item-2">
-              <div class="header-text">
-                <span class="category">SMA</span>
-                <h2 class="" data-bs-toggle="tooltip" title="Beasiswa Sekolah Gratis di SMA Unggulan CT ARSA Foundation Sukoharjo Tahun 2025 – 2026 untuk Lulusan SMP/MTs">Beasiswa Sekolah Gratis di SMA Unggulan CT ARSA Foundation...</h2>
-                <p>Bentuk Beasiswa: Beasiswa penuh selama pendidikan dan tanpa dipungut biaya</p>
-                <div class="buttons">
-                  <div class="main-button">
-                    <a href="#">Apply Now</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+              @endforeach
+
 
           </div>
         </div>
@@ -310,91 +309,35 @@ https://templatemo.com/tm-586-scholar
           <a class="is_active" href="#!" data-filter="*">Show All</a>
         </li>
         <li>
-          <a href="#!" data-filter=".design">SMA</a>
+          <a href="#!" data-filter=".SMA">SMA</a>
         </li>
         <li>
-          <a href="#!" data-filter=".development">S1</a>
+          <a href="#!" data-filter=".S1">S1</a>
         </li>
         <li>
-          <a href="#!" data-filter=".wordpress">S2</a>
+          <a href="#!" data-filter=".S2">S2</a>
         </li>
         <li>
-          <a href="#!" data-filter=".wordpress">S3</a>
+          <a href="#!" data-filter=".S3">S3</a>
         </li>
       </ul>
       <div class="row event_box">
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
-          <div class="events_item">
-            <div class="thumb">
-              <a href="#"><img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jurusan-di-kaist.webp" class="scholarship-text" alt=""></a>
-              <span class="category">S1</span>
-            </div>
-            <div class="down-content">
-              <span class="author">Korea Selatan</span>
-              <h4 class="text-truncate" data-bs-toggle="tooltip" title="Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year">Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year</h4>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
-          <div class="events_item">
-            <div class="thumb">
-              <a href="#"><img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jurusan-di-kaist.webp" class="scholarship-text" alt=""></a>
-              <span class="category">S1</span>
-            </div>
-            <div class="down-content">
-              <span class="author">Korea Selatan</span>
-              <h4 class="text-truncate" data-bs-toggle="tooltip" title="Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year">Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year</h4>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
-          <div class="events_item">
-            <div class="thumb">
-              <a href="#"><img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jurusan-di-kaist.webp" class="scholarship-text" alt=""></a>
-              <span class="category">S1</span>
-            </div>
-            <div class="down-content">
-              <span class="author">Korea Selatan</span>
-              <h4 class="text-truncate" data-bs-toggle="tooltip" title="Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year">Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year</h4>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
-          <div class="events_item">
-            <div class="thumb">
-              <a href="#"><img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jurusan-di-kaist.webp" class="scholarship-text" alt=""></a>
-              <span class="category">S1</span>
-            </div>
-            <div class="down-content">
-              <span class="author">Korea Selatan</span>
-              <h4 class="text-truncate" data-bs-toggle="tooltip" title="Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year">Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year</h4>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
-          <div class="events_item">
-            <div class="thumb">
-              <a href="#"><img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jurusan-di-kaist.webp" class="scholarship-text" alt=""></a>
-              <span class="category">S1</span>
-            </div>
-            <div class="down-content">
-              <span class="author">Korea Selatan</span>
-              <h4 class="text-truncate" data-bs-toggle="tooltip" title="Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year">Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year</h4>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
-          <div class="events_item">
-            <div class="thumb">
-              <a href="#"><img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jurusan-di-kaist.webp" class="scholarship-text" alt=""></a>
-              <span class="category">S1</span>
-            </div>
-            <div class="down-content">
-              <span class="author">Korea Selatan</span>
-              <h4 class="text-truncate" data-bs-toggle="tooltip" title="Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year">Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year</h4>
-            </div>
-          </div>
-        </div>
+          @foreach ($beasiswas_latest as $key => $scholarship)
+              <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 {{ implode(' ', $scholarship->categories->pluck('name')->toArray()) }}">
+                  <div class="events_item">
+                      <div class="thumb">
+                          <a href="#" "><img style="object-fit: cover;" src="{{$scholarship->image_header}}" class="scholarship-text" alt=""></a>
+                          <span class="category">{{ implode(', ', $scholarship->categories->pluck('name')->toArray()) }}</span>
+
+                      </div>
+                      <div class="down-content">
+                          <span class="author">{{$scholarship->country}}</span>
+                          <h4 class="text-truncate" data-bs-toggle="tooltip" title="{{$scholarship->title}}">{{$scholarship->title}}</h4>
+                      </div>
+                  </div>
+              </div>
+          @endforeach
+
 
       </div>
     </div>
@@ -488,93 +431,50 @@ https://templatemo.com/tm-586-scholar
             <h2>Upcoming Scholarship</h2>
           </div>
         </div>
-        <div class="col-lg-12 col-md-6">
-          <div class="item">
-            <div class="row">
-              <div class="col-lg-3">
-                <div class="image">
-                  <img src="https://ieltspresso.com/wp-content/uploads/2024/04/kaist2.jpg" style=" height: 220px;">
-                </div>
-              </div>
-              <div class="col-lg-9">
-                <ul>
-                  <li>
-                    <span class="category">S1</span>
-                    <h4 class="schedule-text-wrapping" style="" data-bs-toggle="tooltip" title="Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year">Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea\nAdvanced Institute of Science and Technology) untuk Lulusan\nSMA/Sederajat dan gap year</h4>
-                  </li>
-                  <li>
-                    <span>Start Date:</span>
-                    <h6>2024-12-21</h6>
-                  </li>
-                  <li>
-                    <span>Finish Date:</span>
-                    <h6>2025-01-07</h6>
-                  </li>
-                </ul>
-                <a href="#"><i class="fa fa-angle-right"></i></a>
+
+          @foreach ($beasiswas_upcoming as $key => $scholarship)
+
+              <div class="col-lg-12 col-md-6">
+                  <div class="item">
+                      <div class="row">
+                          <div class="col-lg-3">
+                              <div class="image">
+                                  <img src="{{$scholarship->image_url}}"
+                                       style="object-fit: cover; height: 220px; width: 200px;">
+                              </div>
+                          </div>
+                          <div class="col-lg-9">
+                              <ul>
+                                  <li>
+                                      <span class="category">S1</span>
+                                      <h4 class="schedule-text-wrapping" style="" data-bs-toggle="tooltip" title="{{$scholarship->title}}">{{$scholarship->title}}</h4>
+                                  </li>
+                                  <li>
+                                      <span>Start Date:</span>
+                                      <h6>
+                                          @php
+                                              $date = new DateTime('2025-01-10'); // Membuat objek DateTime
+                                              $formattedDate = $date->format('Y-m-d'); // Konversi menjadi string (format: YYYY-MM-DD)
+
+                                              echo htmlspecialchars($formattedDate, ENT_QUOTES, 'UTF-8'); // Tidak akan error
+                                              @endphp
+
+                                      </h6>
+                                  </li>
+                                  <li>
+                                      <span>Finish Date:</span>
+                                      <h6>{{$scholarship->end_scholarship_date}}</h6>
+                                  </li>
+                              </ul>
+                              <a href="#"><i class="fa fa-angle-right"></i></a>
+                          </div>
+
+                      </div>
+                  </div>
               </div>
 
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-12 col-md-6">
-          <div class="item">
-            <div class="row">
-              <div class="col-lg-3">
-                <div class="image">
-                  <img src="https://ieltspresso.com/wp-content/uploads/2024/04/kaist2.jpg" style=" height: 220px;">
-                </div>
-              </div>
-              <div class="col-lg-9">
-                <ul>
-                  <li>
-                    <span class="category">S1</span>
-                    <h4 class="schedule-text-wrapping" style="" data-bs-toggle="tooltip" title="Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year">Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea\nAdvanced Institute of Science and Technology) untuk Lulusan\nSMA/Sederajat dan gap year</h4>
-                  </li>
-                  <li>
-                    <span>Start Date:</span>
-                    <h6>2024-12-21</h6>
-                  </li>
-                  <li>
-                    <span>Finish Date:</span>
-                    <h6>2025-01-07</h6>
-                  </li>
-                </ul>
-                <a href="#"><i class="fa fa-angle-right"></i></a>
-              </div>
 
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-12 col-md-6">
-          <div class="item">
-            <div class="row">
-              <div class="col-lg-3">
-                <div class="image">
-                  <img src="https://ieltspresso.com/wp-content/uploads/2024/04/kaist2.jpg" style=" height: 220px;">
-                </div>
-              </div>
-              <div class="col-lg-9">
-                <ul>
-                  <li>
-                    <span class="category">S1</span>
-                    <h4 class="schedule-text-wrapping" style="" data-bs-toggle="tooltip" title="Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea Advanced Institute of Science and Technology) untuk Lulusan SMA Sederajat dan gap year">Beasiswa Gratis Kuliah S1 di Korea Selatan oleh KAIST (Korea\nAdvanced Institute of Science and Technology) untuk Lulusan\nSMA/Sederajat dan gap year</h4>
-                  </li>
-                  <li>
-                    <span>Start Date:</span>
-                    <h6>2024-12-21</h6>
-                  </li>
-                  <li>
-                    <span>Finish Date:</span>
-                    <h6>2025-01-07</h6>
-                  </li>
-                </ul>
-                <a href="#"><i class="fa fa-angle-right"></i></a>
-              </div>
-
-            </div>
-          </div>
-        </div>
+          @endforeach
 
       </div>
     </div>

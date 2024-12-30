@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Beasiswa extends Model
 {
@@ -29,4 +30,16 @@ class Beasiswa extends Model
         'country',
         'image_header'
     ];
+
+    public function getShortTitleAttribute()
+    {
+        return Str::limit($this->title, 70);
+    }
+    public function getShortDescriptionAttribute()
+    {
+        return Str::limit($this->description, 200);
+    }
+
+
+
 }
