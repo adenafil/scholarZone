@@ -20,7 +20,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard/overview', 'overview')->name('dashboard');
         Route::get('/dashboard/applications', 'applications')->name('dashboard.applications');
         Route::get('/dashboard/scholarships', 'scholarships')->name('dashboard.scholarships');
+
         Route::get('/dashboard/documents', 'documents')->name('dashboard.documents');
+        Route::put('/dashboard/documents/personal', 'putDocumentsPersonalInformation')->name('dashboard.documents.personal');
+
         Route::get('/dashboard/help', 'help')->name('dashboard.help');
         Route::get('/dashboard/profile', 'profile')->name('dashboard.profile');
         Route::get('/dashboard/notifications', 'notifications')->name('dashboard.notifications');

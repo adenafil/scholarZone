@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beasiswa;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -50,7 +51,17 @@ class DashboardController extends Controller
     }
 
     public function documents() {
-        return response()->view('dashboard.documents');
+        $user = auth()->user();
+        return response()->view('dashboard.documents', compact('user'));
+    }
+
+    public function putDocumentsPersonalInformation(Request $request) {
+
+        $user = User::findOrFail(auth()->user()->id);
+        $user->update($request->all());
+        alert()->success('Success!','Personal Information Saved Successfully');
+        return back();
+
     }
 
     public function help() {

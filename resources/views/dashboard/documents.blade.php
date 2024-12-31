@@ -293,44 +293,54 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 		                <div class="app-card app-card-settings shadow-sm p-4">
 
 						    <div class="app-card-body">
-							    <form class="settings-form">
-								    <div class="mb-3">
+							    <form class="settings-form" method="POST" action="{{route('dashboard.documents.personal')}}">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="mb-3">
 									    <label for="setting-input-1" class="form-label">Full Name</label>
-									    <input type="text" class="form-control" id="setting-input-1" value="Name" required>
+									    <input type="text" class="form-control" id="setting-input-1" name="full_name" placeholder="Name" value="{{$user->full_name ?? ""}}">
 									</div>
 									<div class="mb-3">
 									    <label for="setting-input-2" class="form-label">NIK</label>
-									    <input type="number" class="form-control" id="setting-input-2" placeholder="NIK" value="NIK" required>
+									    <input name="nik" type="number" class="form-control" id="setting-input-2" placeholder="NIK" value="{{$user->nik ?? ""}}>
 									</div>
 								    <div class="mb-3">
-									    <label for="setting-input-3" class="form-label">Emaill Address</label>
-									    <input type="email" class="form-control" id="setting-input-3" value="Email address">
+									    <label for="setting-input-3" class="form-label">Email Address</label>
+									    <input name="email" type="email" class="form-control" id="setting-input-3" value="{{$user->email ?? ""}}">
 									</div>
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Gender</label>
-										<select class="form-select" aria-label="Default select example">
-											<option value="1">Male</option>
-											<option value="2">Female</option>
+										<select name="gender" class="form-select" aria-label="Default select example">
+                                            <option value="1"
+                                            @if($user->gender == 1)
+                                                selected
+                                            @endif
+											>Male</option>
+											<option value="2"
+                                            @if($user->gender == 2)
+                                                selected
+                                            @endif
+                                            >Female</option>
 										</select>
 									</div>
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Address</label>
-										<textarea type="text" class="form-control" id="setting-input-2" value="Address" style="resize: none; overflow: hidden; height: 100px;" placeholder="Address"></textarea>
+										<textarea name="Address" type="text" class="form-control" id="setting-input-2" style="resize: none; overflow: hidden; height: 100px;" placeholder="Address">{{$user->address ?? ""}}</textarea>
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Phone Number</label>
-										<input type="number" class="form-control" id="setting-input-2" value="Phone Number" placeholder="+62" required>
+										<input name="phone_number" type="number" class="form-control" id="setting-input-2" value="{{$user->phone_number ?? ""}}" placeholder="+62">
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Guardian's Name</label>
-										<input type="text" class="form-control" id="setting-input-2" value="Guardian's Name" placeholder="Guardian's Name">
+										<input name="guardian_name" type="text" class="form-control" id="setting-input-2" value="{{$user->guardian_name ?? ""}}" placeholder="Guardian's Name">
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Parent's Occupation</label>
-										<input type="text" class="form-control" id="setting-input-2" value="Parent's Occupation" placeholder="Parent's Occupation">
+										<input name="parent_occupation" type="text" class="form-control" id="setting-input-2" value="{{$user->parent_occupation ?? ""}}" placeholder="Parent's Occupation">
 									</div>
 
 
@@ -558,6 +568,7 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
         });
 
     </script>
+    @include('sweetalert::alert')
 
 </body>
 </html>
