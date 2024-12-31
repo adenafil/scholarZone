@@ -152,7 +152,7 @@
                             <a class="nav-link" href="{{route('dashboard.help')}}">
 						        <span class="nav-icon nav-icon-applications">
 
-    <img  src="/dashboard-template/assets/images/help.svg" alt="Icon" class=" bi bi-house-door navIcon"   data-hover="/dashboard-template/assets/images/help.svg"
+    <img  src="/dashboard-template/assets/images/help.svg" alt="Icon" class=" bi bi-house-door navIcon"   data-hover="/dashboard-template/assets/images/help-hover.svg"
           data-active="/dashboard-template/assets/images/help-hover.svg">
 
 						         </span>
@@ -213,70 +213,88 @@
 		                <div class="app-card app-card-settings shadow-sm p-4">
 
 						    <div class="app-card-body">
-							    <form class="settings-form">
+							    <form class="settings-form" method="POST" action="{{route('dashboard.profile.put')}}" enctype="multipart/form-data">
+                                    @csrf
+                                    @method("PUT")
 								    <div class="mb-3">
 										<div class="my-2">
-											<img style="width: 200px; height: 200px; object-fit: cover" src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2cd1b396-e1da-45e0-a03c-b50d617f3535_1080x743.jpeg" class="rounded" alt="...">
+											<img style="width: 200px; height: 200px; object-fit: cover" src="{{($user->picture_url == "" || $user->picture_url == null) ? "https://i.pinimg.com/736x/09/21/fc/0921fc87aa989330b8d403014bf4f340.jpg" : "../storage/" . $user->picture_url}}" class="rounded" alt="...">
 										</div>
 										<label for="formFile" class="form-label">Photo Profile</label>
-										<input class="form-control" type="file" id="formFile">
+										<input name="picture_url" class="form-control" type="file" id="formFile">
 									</div>
 									<div class="mb-3">
 									    <label for="setting-input-2" class="form-label">Full Name</label>
-									    <input type="text" class="form-control" id="setting-input-2" placeholder="Name" value="" required>
+									    <input name="full_name" type="text" class="form-control" id="setting-input-2" placeholder="Name" value="{{$user->full_name}}" required>
 									</div>
 								    <div class="mb-3">
 									    <label for="setting-input-3" class="form-label">Emaill Address</label>
-									    <input type="email" class="form-control" id="setting-input-3" value="Email address">
+									    <input name="email" type="email" class="form-control" id="setting-input-3" placeholder="Email address" value="{{$user->email}}">
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Phone Number</label>
-										<input type="number" class="form-control" id="setting-input-2" value="Phone Number" placeholder="+62" required>
+										<input name="phone_number" type="number" class="form-control" id="setting-input-2" value="{{$user->phone_number}}" placeholder="+62">
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Address</label>
-										<textarea type="text" class="form-control" id="setting-input-2" value="Address" style="resize: none; overflow: hidden; height: 100px;" placeholder="Address"></textarea>
+										<textarea name="address" type="text" class="form-control" id="setting-input-2" style="resize: none; overflow: hidden; height: 100px;" placeholder="Address">{{$user->address ?? ""}}</textarea>
 									</div>
 
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Gender</label>
-										<select class="form-select" aria-label="Default select example">
-											<option value="1">Male</option>
-											<option value="2">Female</option>
+										<select name="gender" class="form-select" aria-label="Default select example">
+											<option value="1"
+                                            @if($user->gender == 1)
+                                                selected
+                                            @endif
+                                            >Male</option>
+											<option value="2"
+                                                    @if($user->gender == 2)
+                                                        selected
+                                                @endif
+                                            >Female</option>
 										</select>
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">City</label>
-										<input type="text" class="form-control" id="setting-input-2" value="City" placeholder="City">
+										<input name="city" type="text" class="form-control" id="setting-input-2" value="{{$user->city}}" placeholder="City">
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Password</label>
-										<input type="password" class="form-control" id="setting-input-2" value="Password" placeholder="Password">
+										<input name="password" type="password" class="form-control" id="setting-input-2" value="{{$user->password}}" placeholder="Password">
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Current Level Of Eduaction</label>
-										<select class="form-select" aria-label="Default select example">
-											<option value="1">SMA</option>
-											<option value="2">S1</option>
-											<option value="2">S2</option>
-											<option value="2">S3</option>
+										<select name="education_level" class="form-select" aria-label="Default select example">
+											<option value="1"
+                                            @if($user->education_level == 1) selected @endif
+                                            >SMA</option>
+											<option value="2"
+                                                    @if($user->education_level == 2) selected @endif
+                                            >S1</option>
+											<option value="3"
+                                                    @if($user->education_level == 3) selected @endif
+                                            >S2</option>
+											<option value="4"
+                                                    @if($user->education_level == 4) selected @endif
+                                            >S3</option>
 										</select>
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-1" class="form-label">School / University Name</label>
-										<input type="text" class="form-control" id="setting-input-1" value="Universitas Ngawi" required>
+										<input name="school_name" type="text" class="form-control" id="setting-input-1" value="{{$user->school_name}}" placeholder="Universitas Ngawi">
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-1" class="form-label">Major / Study Program</label>
-										<input type="text" class="form-control" id="setting-input-1" placeholder="Bachelor's Degree" required>
+										<input name="major" type="text" class="form-control" id="setting-input-1" placeholder="Bachelor's Degree" value="{{$user->major}}">
 									</div>
 
 
@@ -319,7 +337,7 @@
 
         navLinks.forEach((link, index) => {
             console.log('hello')
-            if (index  !== 4) {
+            if (index  !== 5) {
                 console.log('link index' + index)
                 const navIcon = link.querySelector('span img');
                 console.log(navIcon);
@@ -414,6 +432,8 @@
         });
 
     </script>
+
+@include('sweetalert::alert')
 
 </body>
 </html>

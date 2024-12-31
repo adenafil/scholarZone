@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -61,6 +62,55 @@ class DashboardController extends Controller
         $user->update($request->all());
         alert()->success('Success!','Personal Information Saved Successfully');
         return back();
+    }
+
+    public function putDocumentsEducationInformation(Request $request) {
+        $user = User::findOrFail(auth()->user()->id);
+        if ($request->hasFile('picture_url')) {
+            $data = $request->all();
+            $file = $request->file('student_id_card');
+            $filePath = $file->store('student_id_cards'); // Simpan di folder public/student_id_cards
+            $data['picture_url'] = $filePath;
+            $user->update($data);
+            alert()->success('Success!','Education Information Saved Successfully');
+            return back();
+        }
+        $user->update($request->all());
+        alert()->success('Success!','Education Information Saved Successfully');
+        return back();
+    }
+
+    public function putDocument(Request $request) {
+        $user = User::findOrFail(auth()->user()->id);
+        $data = $request->all();
+
+        if (isset($data['kartu_keluarga'])) {
+            $file = $request->file('kartu_keluarga');
+            $filePath = $file->store('documents'); // Simpan di folder public/student_id_cards
+            $data['kartu_keluarga'] = $filePath;
+        }
+
+        if (isset($data['transkrip_nilai_terakhir'])) {
+            $file = $request->file('transkrip_nilai_terakhir');
+            $filePath = $file->store('documents'); // Simpan di folder public/student_id_cards
+            $data['transkrip_nilai_terakhir'] = $filePath;
+        }
+
+        if (isset($data['ijazah_terakhir'])) {
+            $file = $request->file('ijazah_terakhir');
+            $filePath = $file->store('documents'); // Simpan di folder public/student_id_cards
+            $data['ijazah_terakhir'] = $filePath;
+        }
+
+        if (isset($data['portofolio'])) {
+            $file = $request->file('portofolio');
+            $filePath = $file->store('documents'); // Simpan di folder public/student_id_cards
+            $data['portofolio'] = $filePath;
+        }
+
+        $user->update($data);
+        alert()->success('Success!','Attachment of Supporting Documents Saved Successfully');
+        return back();
 
     }
 
@@ -69,7 +119,25 @@ class DashboardController extends Controller
     }
 
     public function profile() {
-        return response()->view('dashboard.profile');
+        $user = User::findOrFail(auth()->user()->id);
+
+        return response()->view('dashboard.profile', compact('user'));
+    }
+
+    public function putProfile(Request $request) {
+        $user = User::findOrFail(auth()->user()->id);
+        $data = $request->all();
+
+        if (isset($data['picture_url'])) {
+            $file = $request->file('picture_url');
+            $filePath = $file->store('profile'); // Simpan di folder public/student_id_cards
+            $data['picture_url'] = $filePath;
+        }
+
+        $user->update($data);
+        alert()->success('Success!','Personal Information Saved Successfully');
+        return back();
+
     }
 
     public function notifications() {

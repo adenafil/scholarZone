@@ -23,9 +23,12 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/dashboard/documents', 'documents')->name('dashboard.documents');
         Route::put('/dashboard/documents/personal', 'putDocumentsPersonalInformation')->name('dashboard.documents.personal');
+        Route::put('/dashboard/documents/education', 'putDocumentsEducationInformation')->name('dashboard.documents.education');
+        Route::put('/dashboard/documents/document', 'putDocument')->name('dashboard.documents.document');
 
         Route::get('/dashboard/help', 'help')->name('dashboard.help');
         Route::get('/dashboard/profile', 'profile')->name('dashboard.profile');
+        Route::put('/dashboard/profile', 'putProfile')->name('dashboard.profile.put');
         Route::get('/dashboard/notifications', 'notifications')->name('dashboard.notifications');
     });
 

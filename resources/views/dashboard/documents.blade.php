@@ -358,43 +358,91 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 						<div class="app-card app-card-settings shadow-sm p-4">
 
 							<div class="app-card-body">
-								<form class="settings-form">
+								<form class="settings-form" method="POST" action="{{route('dashboard.documents.education')}}" enctype="multipart/form-data">
+                                    @csrf
+                                    @method("PUT")
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Current Level Of Eduaction</label>
-										<select class="form-select" aria-label="Default select example">
-											<option value="1">SMA</option>
-											<option value="2">S1</option>
-											<option value="2">S2</option>
-											<option value="2">S3</option>
+										<select name="education_level" class="form-select" aria-label="2">
+
+											<option value="1"
+                                            @if($user->education_level == 1)
+                                                selected
+                                            @endif
+                                            >SMA</option>
+
+											<option value="2"
+                                                    @if($user->education_level == 2)
+                                                        selected
+                                                @endif
+                                            >S1</option>
+
+                                            <option value="3"
+                                                    @if($user->education_level == 3)
+                                                        selected
+                                                @endif
+                                            >S2</option>
+
+											<option value="4"
+                                                    @if($user->education_level == 4)
+                                                        selected
+                                                @endif
+                                            >S3</option>
 										</select>
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-1" class="form-label">School / University Name</label>
-										<input type="text" class="form-control" id="setting-input-1" value="Universitas Ngawi" required>
+										<input name="school_name" type="text" class="form-control" id="setting-input-1" value="{{$user->school_name ?? ""}}" placeholder="Universitas Ngawi" required>
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-1" class="form-label">Major / Study Program</label>
-										<input type="text" class="form-control" id="setting-input-1" placeholder="Bachelor's Degree" required>
+										<input name="major" type="text" class="form-control" id="setting-input-1" placeholder="Bachelor's Degree" value="{{$user->major}}" required>
 									</div>
 
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Year of Graduation</label>
-										<input type="number" class="form-control" id="setting-input-2" value="Phone Number" placeholder="2050" min="1990" max="2050">
+										<input name="year_of_graduation" type="number" class="form-control" id="setting-input-2" value="{{$user->year_of_graduation}}" placeholder="2050" min="1990" max="2050">
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Latest GPA or Report Card Grades</label>
-										<input type="number" class="form-control" id="setting-input-2" value="Phone Number" placeholder="0" min="0" max="50">
+										<input name="latest_gpa" type="number" class="form-control" id="setting-input-2" value="{{$user->latest_gpa}}" placeholder="0" min="0" max="50">
 									</div>
 
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Student ID Card</label>
-										<input class="form-control" type="file" id="formFile">
-									</div>
+										<input class="form-control" type="file" name="picture_url" id="formFile">
 
+                                        @if($user->picture_url)
+                                            <div
+                                                id="viewIdCard"
+                                                class="btn app-btn-primary mt-3">
+                                            View Image
+                                            </div>
+                                        @endif
+
+                                    </div>
+
+                                    <!-- Modal for Viewing Image -->
+                                    <div class="modal fade" id="viewImageModal" tabindex="-1" aria-labelledby="viewImageModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="viewImageModalLabel">Student Id Card</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img id="uploadedImage" src="/storage/{{$user->picture_url ?? ""}}" alt="Uploaded Image" class="img-fluid">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
 									<button type="submit" class="btn app-btn-primary" >Save Changes</button>
@@ -406,35 +454,148 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 				</div><!--//row-->
 
 				<div class="row g-4 settings-section mt-4">
-					<h3 class="section-title">Educational Background</h3>
+					<h3 class="section-title">Attachment of Supporting Documents</h3>
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 
 							<div class="app-card-body">
-								<form class="settings-form">
-
+								<form class="settings-form" method="POST" action="{{route('dashboard.documents.document')}}" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Kartu Keluarga</label>
-										<input class="form-control" type="file" id="formFile">
-									</div>
+										<input class="form-control" type="file" id="formFile" name="kartu_keluarga">
 
-									<div class="mb-3">
+                                        @if($user->kartu_keluarga)
+                                            <div
+                                                id="viewKartuKeluarga"
+                                                class="btn app-btn-primary mt-3">
+                                                View Image
+                                            </div>
+                                        @endif
+
+                                    </div>
+
+                                    <!-- Modal for Viewing Image -->
+                                    <div class="modal fade" id="viewKartuKeluargaModal" tabindex="-1" aria-labelledby="viewKartuKeluargaModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="viewKartuKeluargaModalLabel">Student Id Card</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img id="uploadedImage" src="/storage/{{$user->kartu_keluarga ?? ""}}" alt="Uploaded Image" class="img-fluid">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="mb-3">
 										<label for="setting-input-2" class="form-label">Transkrip Nilai Terakhir / Raport Sekolah</label>
-										<input class="form-control" type="file" id="formFile">
-									</div>
+										<input class="form-control" type="file" id="formFile" name="transkrip_nilai_terakhir">
 
-									<div class="mb-3">
+                                        @if($user->transkrip_nilai_terakhir)
+                                            <div
+                                                id="viewTNR"
+                                                class="btn app-btn-primary mt-3">
+                                                View Image
+                                            </div>
+                                        @endif
+
+                                    </div>
+
+                                    <!-- Modal for Viewing Image -->
+                                    <div class="modal fade" id="viewTNRModal" tabindex="-1" aria-labelledby="viewTNRLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="viewTNRLabel">Student Id Card</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img id="uploadedImage" src="/storage/{{$user->transkrip_nilai_terakhir ?? ""}}" alt="Uploaded Image" class="img-fluid">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="mb-3">
 										<label for="setting-input-2" class="form-label">Ijazah Terakhir</label>
-										<input class="form-control" type="file" id="formFile">
-									</div>
+										<input class="form-control" type="file" id="formFile" name="ijazah_terakhir">
 
-									<div class="mb-3">
+                                        @if($user->ijazah_terakhir)
+                                            <div
+                                                id="viewIjazah"
+                                                class="btn app-btn-primary mt-3">
+                                                View Image
+                                            </div>
+                                        @endif
+
+                                    </div>
+
+                                    <!-- Modal for Viewing Image -->
+                                    <div class="modal fade" id="viewIjazahModal" tabindex="-1" aria-labelledby="viewIjazahLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="viewIjazahLabel">Student Id Card</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img id="uploadedImage" src="/storage/{{$user->ijazah_terakhir ?? ""}}" alt="Uploaded Image" class="img-fluid">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="mb-3">
 										<label for="setting-input-2" class="form-label">Portofolio / Resume</label>
-										<input class="form-control" type="file" id="formFile">
-									</div>
+										<input class="form-control" type="file" id="formFile" name="portofolio">
+
+                                        @if($user->portofolio)
+                                            <div
+                                                id="viewPorto"
+                                                class="btn app-btn-primary mt-3">
+                                                View Image
+                                            </div>
+                                        @endif
+
+                                    </div>
+
+                                    <!-- Modal for Viewing Image -->
+                                    <div class="modal fade" id="viewPortoModal" tabindex="-1" aria-labelledby="viewPortoLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="viewPortoLabel">Student Id Card</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img id="uploadedImage" src="/storage/{{$user->portofolio ?? ""}}" alt="Uploaded Image" class="img-fluid">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
-									<button type="submit" class="btn app-btn-primary" >Save Changes</button>
+                                    <button type="submit" class="btn app-btn-primary" >Save Changes</button>
 								</form>
 							</div><!--//app-card-body-->
 
@@ -566,6 +727,48 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
                 console.error('Element with class .link-notifications not found.');
             }
         });
+
+
+        document.getElementById("viewIdCard")
+            .addEventListener("click", (e) => {
+                e.preventDefault();
+                const viewImageModal = new bootstrap.Modal(document.getElementById('viewImageModal'));
+                viewImageModal.show();
+
+            })
+
+        document.getElementById("viewKartuKeluarga")
+            .addEventListener("click", (e) => {
+                e.preventDefault();
+                const viewImageModal = new bootstrap.Modal(document.getElementById('viewKartuKeluargaModal'));
+                viewImageModal.show();
+
+            })
+
+        document.getElementById("viewTNR")
+            .addEventListener("click", (e) => {
+                e.preventDefault();
+                const viewImageModal = new bootstrap.Modal(document.getElementById('viewTNRModal'));
+                viewImageModal.show();
+
+            })
+
+        document.getElementById("viewIjazah")
+            .addEventListener("click", (e) => {
+                e.preventDefault();
+                const viewImageModal = new bootstrap.Modal(document.getElementById('viewIjazahModal'));
+                viewImageModal.show();
+
+            })
+
+        document.getElementById("viewPorto")
+            .addEventListener("click", (e) => {
+                e.preventDefault();
+                const viewImageModal = new bootstrap.Modal(document.getElementById('viewPortoModal'));
+                viewImageModal.show();
+
+            })
+
 
     </script>
     @include('sweetalert::alert')
