@@ -36,12 +36,18 @@
 			    <div class="app-auth-body mx-auto">
 				    <div class="app-auth-branding mb-4"><a class="app-logo" href="index.html"><img class="logo-icon me-2" src="/dashboard-template/assets/images/portal-logo-ade.svg" alt="logo" style="width: 100px; height: 100px"></a></div>
 					<h2 class="auth-heading text-center mb-5">Log in to Portal</h2>
-			        <div class="auth-form-container text-start">
+                    @if ($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                            {{ $errors->first() }}
+                        </div>
+                    @endif
+
+                    <div class="auth-form-container text-start">
 						<form class="auth-form login-form" method="POST" action="{{ route('login') }}">
                             @csrf
 							<div class="email mb-3">
 								<label class="sr-only" for="email">Email</label>
-								<input id="email" name="email" type="email" class="form-control signin-email" placeholder="Email address" required="required">
+								<input id="email" name="email" type="email" class="form-control signin-email" placeholder="Email address" required="required"     value="{{ old('email') }}">
 							</div><!--//form-group-->
 							<div class="password mb-3">
 								<label class="sr-only" for="password">Password</label>

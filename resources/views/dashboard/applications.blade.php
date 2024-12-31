@@ -51,7 +51,6 @@
                                         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
                                         <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
                                     </svg>
-                                    <span class="icon-badge">3</span>
                                 </a><!--//dropdown-toggle-->
 
                             </div><!--//app-utility-item-->
@@ -212,7 +211,7 @@
 							    <div class="col-auto">
 								    <form class="table-search-form row gx-1 align-items-center">
 					                    <div class="col-auto">
-					                        <input type="text" id="search-orders" name="searchorders" class="form-control search-orders" placeholder="Search">
+					                        <input type="text" id="search-orders" name="search" class="form-control search-orders" placeholder="Search">
 					                    </div>
 					                    <div class="col-auto">
 					                        <button type="submit" class="btn app-btn-secondary">Search</button>
@@ -227,16 +226,16 @@
 
 
 			    <nav id="orders-table-tab" class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
-				    <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#orders-all" role="tab" aria-controls="orders-all" aria-selected="true">All</a>
-				    <a class="flex-sm-fill text-sm-center nav-link"  id="orders-paid-tab" data-bs-toggle="tab" href="#orders-paid" role="tab" aria-controls="orders-paid" aria-selected="false">SMA</a>
-				    <a class="flex-sm-fill text-sm-center nav-link" id="orders-pending-tab" data-bs-toggle="tab" href="#orders-pending" role="tab" aria-controls="orders-pending" aria-selected="false">S1</a>
-				    <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab" data-bs-toggle="tab" href="#orders-cancelled" role="tab" aria-controls="orders-cancelled" aria-selected="false">S2</a>
-				    <a class="flex-sm-fill text-sm-center nav-link" id="applications-s3-tab" data-bs-toggle="tab" href="#application-s3" role="tab" aria-controls="orders-cancelled" aria-selected="false">S3</a>
+				    <a class="flex-sm-fill text-sm-center nav-link active" id="all-tab" data-bs-toggle="tab" href="#all" role="tab" aria-controls="orders-all" aria-selected="true">All</a>
+				    <a class="flex-sm-fill text-sm-center nav-link"  id="sma-tab" data-bs-toggle="tab" href="#sma" role="tab" aria-controls="orders-paid" aria-selected="false">SMA</a>
+				    <a class="flex-sm-fill text-sm-center nav-link" id="s1-tab" data-bs-toggle="tab" href="#s1" role="tab" aria-controls="orders-pending" aria-selected="false">S1</a>
+				    <a class="flex-sm-fill text-sm-center nav-link" id="s2-tab" data-bs-toggle="tab" href="#s2" role="tab" aria-controls="orders-cancelled" aria-selected="false">S2</a>
+				    <a class="flex-sm-fill text-sm-center nav-link" id="s3-tab" data-bs-toggle="tab" href="#s3" role="tab" aria-controls="orders-cancelled" aria-selected="false">S3</a>
 				</nav>
 
 
 				<div class="tab-content" id="orders-table-tab-content">
-			        <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+			        <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
 					    <div class="app-card app-card-orders-table shadow-sm mb-5">
 						    <div class="app-card-body">
 							    <div class="table-responsive">
@@ -269,7 +268,13 @@
 													display: flex;
 													flex-direction: column;">
                                                         <a href="{{$application->beasiswa[0]->information_link}}" class="btn btn-sm btn-primary text-white mt-1">View</a>
-                                                        <a href="#" class="btn btn-sm btn-danger text-white mt-1">Remove</a>
+
+                                                        <form method="POST" action="{{ route('dashboard.applications.delete', $application->id) }}" class="btn btn-sm btn-danger text-white mt-1" >
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="btn btn-sm btn-danger text-white">Remove</button>
+
+                                                        </form>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -287,139 +292,255 @@
 
 			        </div><!--//tab-pane-->
 
-			        <div class="tab-pane fade" id="orders-paid" role="tabpanel" aria-labelledby="orders-paid-tab">
-					    <div class="app-card app-card-orders-table mb-5">
-						    <div class="app-card-body">
-							    <div class="table-responsive">
+                    <div class="tab-pane fade show" id="sma" role="tabpanel" aria-labelledby="sma-tab">
+                        <div class="app-card app-card-orders-table shadow-sm mb-5">
+                            <div class="app-card-body">
+                                <div class="table-responsive">
+                                    <table class="table app-table-hover mb-0 text-center">
+                                        <thead>
+                                        <tr>
+                                            <th class="cell">No</th>
+                                            <th class="cell">Scholarship Name</th>
+                                            <th class="cell">Last Applied</th>
+                                            <th class="cell">Deadline Date</th>
+                                            <th class="cell">Category</th>
+                                            <th class="cell">Action</th>
+                                            <th class="cell"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach ($applications as $key => $application)
+                                            @if($application->beasiswa[0]->categories->contains(function ($category) {
+                                                return strpos(strtolower($category->name), 'sma') !== false;
+                                            }))
+                                                <tr>
+                                                    <td class="cell">
+            <span class="mx-1">
+                {{ ($applications->currentPage() - 1) * $applications->perPage() + $key + 1 }}
+            </span>
+                                                    </td>
+                                                    <td class="cell"><span class="truncate">{{$application->beasiswa[0]->title}}</span></td>
+                                                    <td class="cell">{{$application->updated_at}}</td>
+                                                    <td class="cell">{{$application->beasiswa[0]->end_scholarship_date}}</td>
+                                                    <td class="cell"><span class="badge bg-info">{{ implode(', ', $application->beasiswa[0]->categories->pluck('name')->toArray()) }}</span></td>
+                                                    <td class="cell">
+                                                        <div style="
+													display: flex;
+													flex-direction: column;">
+                                                            <a href="{{$application->beasiswa[0]->information_link}}" class="btn btn-sm btn-primary text-white mt-1">View</a>
 
-							        <table class="table mb-0 text-left">
-										<thead>
-											<tr>
-												<th class="cell">Order</th>
-												<th class="cell">Product</th>
-												<th class="cell">Customer</th>
-												<th class="cell">Date</th>
-												<th class="cell">Status</th>
-												<th class="cell">Total</th>
-												<th class="cell"></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td class="cell">#15346</td>
-												<td class="cell"><span class="truncate">Lorem ipsum dolor sit amet eget volutpat erat</span></td>
-												<td class="cell">John Sanders</td>
-												<td class="cell"><span>17 Oct</span><span class="note">2:16 PM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$259.35</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
+                                                            <form method="POST" action="{{ route('dashboard.applications.delete', $application->id) }}" class="btn btn-sm btn-danger text-white mt-1" >
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button class="btn btn-sm btn-danger text-white">Remove</button>
 
-											<tr>
-												<td class="cell">#15344</td>
-												<td class="cell"><span class="truncate">Pellentesque diam imperdiet</span></td>
-												<td class="cell">Teresa Holland</td>
-												<td class="cell"><span class="cell-data">16 Oct</span><span class="note">01:16 AM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$123.00</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-											<tr>
-												<td class="cell">#15343</td>
-												<td class="cell"><span class="truncate">Vestibulum a accumsan lectus sed mollis ipsum</span></td>
-												<td class="cell">Jayden Massey</td>
-												<td class="cell"><span class="cell-data">15 Oct</span><span class="note">8:07 PM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$199.00</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
+                                            @endif
+                                        @endforeach
 
+                                        </tbody>
+                                    </table>
+                                </div><!--//table-responsive-->
 
-											<tr>
-												<td class="cell">#15341</td>
-												<td class="cell"><span class="truncate">Morbi vulputate lacinia neque et sollicitudin</span></td>
-												<td class="cell">Raymond Atkins</td>
-												<td class="cell"><span class="cell-data">11 Oct</span><span class="note">11:18 AM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$678.26</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
+                            </div><!--//app-card-body-->
+                        </div><!--//app-card-->
+                        <div class="d-flex justify-content-center app-pagination">
+                            {{ $applications->appends(['search' => request()->get('search')])->links() }}
+                        </div>
 
-										</tbody>
-									</table>
-						        </div><!--//table-responsive-->
-						    </div><!--//app-card-body-->
-						</div><!--//app-card-->
-			        </div><!--//tab-pane-->
+                    </div><!--//tab-pane-->
 
-			        <div class="tab-pane fade" id="orders-pending" role="tabpanel" aria-labelledby="orders-pending-tab">
-					    <div class="app-card app-card-orders-table mb-5">
-						    <div class="app-card-body">
-							    <div class="table-responsive">
-							        <table class="table mb-0 text-left">
-										<thead>
-											<tr>
-												<th class="cell">Order</th>
-												<th class="cell">Product</th>
-												<th class="cell">Customer</th>
-												<th class="cell">Date</th>
-												<th class="cell">Status</th>
-												<th class="cell">Total</th>
-												<th class="cell"></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td class="cell">#15345</td>
-												<td class="cell"><span class="truncate">Consectetur adipiscing elit</span></td>
-												<td class="cell">Dylan Ambrose</td>
-												<td class="cell"><span class="cell-data">16 Oct</span><span class="note">03:16 AM</span></td>
-												<td class="cell"><span class="badge bg-warning">Pending</span></td>
-												<td class="cell">$96.20</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
-										</tbody>
-									</table>
-						        </div><!--//table-responsive-->
-						    </div><!--//app-card-body-->
-						</div><!--//app-card-->
-			        </div><!--//tab-pane-->
-			        <div class="tab-pane fade" id="orders-cancelled" role="tabpanel" aria-labelledby="orders-cancelled-tab">
-					    <div class="app-card app-card-orders-table mb-5">
-						    <div class="app-card-body">
-							    <div class="table-responsive">
-							        <table class="table mb-0 text-left">
-										<thead>
-											<tr>
-												<th class="cell">Order</th>
-												<th class="cell">Product</th>
-												<th class="cell">Customer</th>
-												<th class="cell">Date</th>
-												<th class="cell">Status</th>
-												<th class="cell">Total</th>
-												<th class="cell"></th>
-											</tr>
-										</thead>
-										<tbody>
+                    <div class="tab-pane fade show" id="s1" role="tabpanel" aria-labelledby="s1-tab">
+                        <div class="app-card app-card-orders-table shadow-sm mb-5">
+                            <div class="app-card-body">
+                                <div class="table-responsive">
+                                    <table class="table app-table-hover mb-0 text-center">
+                                        <thead>
+                                        <tr>
+                                            <th class="cell">No</th>
+                                            <th class="cell">Scholarship Name</th>
+                                            <th class="cell">Last Applied</th>
+                                            <th class="cell">Deadline Date</th>
+                                            <th class="cell">Category</th>
+                                            <th class="cell">Action</th>
+                                            <th class="cell"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach ($applications as $key => $application)
+                                            @if($application->beasiswa[0]->categories->contains(function ($category) {
+                                                return strpos(strtolower($category->name), 's1') !== false;
+                                            }))
+                                                <tr>
+                                                    <td class="cell">
+            <span class="mx-1">
+                {{ ($applications->currentPage() - 1) * $applications->perPage() + $key + 1 }}
+            </span>
+                                                    </td>
+                                                    <td class="cell"><span class="truncate">{{$application->beasiswa[0]->title}}</span></td>
+                                                    <td class="cell">{{$application->updated_at}}</td>
+                                                    <td class="cell">{{$application->beasiswa[0]->end_scholarship_date}}</td>
+                                                    <td class="cell"><span class="badge bg-info">{{ implode(', ', $application->beasiswa[0]->categories->pluck('name')->toArray()) }}</span></td>
+                                                    <td class="cell">
+                                                        <div style="
+													display: flex;
+													flex-direction: column;">
+                                                            <a href="{{$application->beasiswa[0]->information_link}}" class="btn btn-sm btn-primary text-white mt-1">View</a>
 
-											<tr>
-												<td class="cell">#15342</td>
-												<td class="cell"><span class="truncate">Justo feugiat neque</span></td>
-												<td class="cell">Reina Brooks</td>
-												<td class="cell"><span class="cell-data">12 Oct</span><span class="note">04:23 PM</span></td>
-												<td class="cell"><span class="badge bg-danger">Cancelled</span></td>
-												<td class="cell">$59.00</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
+                                                            <form method="POST" action="{{ route('dashboard.applications.delete', $application->id) }}" class="btn btn-sm btn-danger text-white mt-1" >
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button class="btn btn-sm btn-danger text-white">Remove</button>
 
-										</tbody>
-									</table>
-						        </div><!--//table-responsive-->
-						    </div><!--//app-card-body-->
-						</div><!--//app-card-->
-			        </div><!--//tab-pane-->
-				</div><!--//tab-content-->
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            @endif
+                                        @endforeach
+
+                                        </tbody>
+                                    </table>
+                                </div><!--//table-responsive-->
+
+                            </div><!--//app-card-body-->
+                        </div><!--//app-card-->
+                        <div class="d-flex justify-content-center app-pagination">
+                            {{ $applications->appends(['search' => request()->get('search')])->links() }}
+                        </div>
+
+                    </div><!--//tab-pane-->
+
+                    <div class="tab-pane fade show" id="s2" role="tabpanel" aria-labelledby="s2-tab">
+                        <div class="app-card app-card-orders-table shadow-sm mb-5">
+                            <div class="app-card-body">
+                                <div class="table-responsive">
+                                    <table class="table app-table-hover mb-0 text-center">
+                                        <thead>
+                                        <tr>
+                                            <th class="cell">No</th>
+                                            <th class="cell">Scholarship Name</th>
+                                            <th class="cell">Last Applied</th>
+                                            <th class="cell">Deadline Date</th>
+                                            <th class="cell">Category</th>
+                                            <th class="cell">Action</th>
+                                            <th class="cell"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach ($applications as $key => $application)
+                                            @if($application->beasiswa[0]->categories->contains(function ($category) {
+                                                return strpos(strtolower($category->name), 's2') !== false;
+                                            }))
+                                                <tr>
+                                                    <td class="cell">
+            <span class="mx-1">
+                {{ ($applications->currentPage() - 1) * $applications->perPage() + $key + 1 }}
+            </span>
+                                                    </td>
+                                                    <td class="cell"><span class="truncate">{{$application->beasiswa[0]->title}}</span></td>
+                                                    <td class="cell">{{$application->updated_at}}</td>
+                                                    <td class="cell">{{$application->beasiswa[0]->end_scholarship_date}}</td>
+                                                    <td class="cell"><span class="badge bg-info">{{ implode(', ', $application->beasiswa[0]->categories->pluck('name')->toArray()) }}</span></td>
+                                                    <td class="cell">
+                                                        <div style="
+													display: flex;
+													flex-direction: column;">
+                                                            <a href="{{$application->beasiswa[0]->information_link}}" class="btn btn-sm btn-primary text-white mt-1">View</a>
+
+                                                            <form method="POST" action="{{ route('dashboard.applications.delete', $application->id) }}" class="btn btn-sm btn-danger text-white mt-1" >
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button class="btn btn-sm btn-danger text-white">Remove</button>
+
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            @endif
+                                        @endforeach
+
+                                        </tbody>
+                                    </table>
+                                </div><!--//table-responsive-->
+
+                            </div><!--//app-card-body-->
+                        </div><!--//app-card-->
+                        <div class="d-flex justify-content-center app-pagination">
+                            {{ $applications->appends(['search' => request()->get('search')])->links() }}
+                        </div>
+
+                    </div><!--//tab-pane-->
+
+                    <div class="tab-pane fade show" id="s3" role="tabpanel" aria-labelledby="s3-tab">
+                        <div class="app-card app-card-orders-table shadow-sm mb-5">
+                            <div class="app-card-body">
+                                <div class="table-responsive">
+                                    <table class="table app-table-hover mb-0 text-center">
+                                        <thead>
+                                        <tr>
+                                            <th class="cell">No</th>
+                                            <th class="cell">Scholarship Name</th>
+                                            <th class="cell">Last Applied</th>
+                                            <th class="cell">Deadline Date</th>
+                                            <th class="cell">Category</th>
+                                            <th class="cell">Action</th>
+                                            <th class="cell"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach ($applications as $key => $application)
+                                            @if($application->beasiswa[0]->categories->contains(function ($category) {
+                                                return strpos(strtolower($category->name), 's3') !== false;
+                                            }))
+                                                <tr>
+                                                    <td class="cell">
+            <span class="mx-1">
+                {{ ($applications->currentPage() - 1) * $applications->perPage() + $key + 1 }}
+            </span>
+                                                    </td>
+                                                    <td class="cell"><span class="truncate">{{$application->beasiswa[0]->title}}</span></td>
+                                                    <td class="cell">{{$application->updated_at}}</td>
+                                                    <td class="cell">{{$application->beasiswa[0]->end_scholarship_date}}</td>
+                                                    <td class="cell"><span class="badge bg-info">{{ implode(', ', $application->beasiswa[0]->categories->pluck('name')->toArray()) }}</span></td>
+                                                    <td class="cell">
+                                                        <div style="
+													display: flex;
+													flex-direction: column;">
+                                                            <a href="{{$application->beasiswa[0]->information_link}}" class="btn btn-sm btn-primary text-white mt-1">View</a>
+
+                                                            <form method="POST" action="{{ route('dashboard.applications.delete', $application->id) }}" class="btn btn-sm btn-danger text-white mt-1" >
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button class="btn btn-sm btn-danger text-white">Remove</button>
+
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            @endif
+                                        @endforeach
+
+                                        </tbody>
+                                    </table>
+                                </div><!--//table-responsive-->
+
+                            </div><!--//app-card-body-->
+                        </div><!--//app-card-->
+                        <div class="d-flex justify-content-center app-pagination">
+                            {{ $applications->appends(['search' => request()->get('search')])->links() }}
+                        </div>
+
+                    </div><!--//tab-pane-->
+
+                </div><!--//tab-content-->
 
 
 

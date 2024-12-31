@@ -56,11 +56,11 @@
 
                             <div class="email mb-3">
 								<label class="sr-only" for="full_name">Your Name</label>
-								<input id="full_name" name="full_name" type="text" class="form-control signup-name" placeholder="Full name" required="required">
+								<input id="full_name" name="full_name" type="text" class="form-control signup-name" placeholder="Full name" required="required"  value="{{ old('full_name') }}">
 							</div>
 							<div class="email mb-3">
 								<label class="sr-only" for="email">Your Email</label>
-								<input id="email" name="email" type="email" class="form-control signup-email" placeholder="Email" required="required">
+								<input id="email" name="email" type="email" class="form-control signup-email" placeholder="Email" value="{{ old('email') }}" required="required">
 							</div>
 							<div class="password mb-3">
 								<label class="sr-only" for="password">Password</label>
@@ -69,18 +69,18 @@
 
 							<div class="email mb-3">
 								<label class="sr-only" for="phone_number">Your Phone Number</label>
-								<input id="phone_number" name="phone_number" type="number"  class="form-control signup-name" placeholder="Phone number" required="required">
+								<input id="phone_number" name="phone_number" type="number"  class="form-control signup-name" placeholder="Phone number" value="{{ old('number') }}" required="required">
 
 							</div>
 
 							<div class="email mb-3">
 								<label class="sr-only" for="address">Your Address</label>
-								<textarea style="overflow:hidden; resize: none; height: 100px" name="address" class="form-control" id="exampleFormControlTextarea1" rows="10" cols="20" placeholder="Address"></textarea>
+								<textarea style="overflow:hidden; resize: none; height: 100px" name="address" class="form-control" id="exampleFormControlTextarea1" rows="10" cols="20" placeholder="Address">{{ old('address') }}</textarea>
 							</div>
 
 							<div class="email mb-3">
 								<label class="sr-only" for="city">Your City</label>
-								<input id="city" name="city" type="text" class="form-control signup-name" placeholder="City" required="required">
+								<input id="city" name="city" type="text" class="form-control signup-name" placeholder="City" value="{{ old('city') }}" required="required">
 							</div>
 
 							<div class="email mb-3">
@@ -95,17 +95,17 @@
 
 							<div class="email mb-3">
 								<label class="sr-only" for="institution_name">Your Institution</label>
-								<input id="institution_name" name="institution_name" type="text" class="form-control signup-name" placeholder="Institution name" required="required">
+								<input id="institution_name" name="institution_name" type="text" class="form-control signup-name" placeholder="Institution name" value="{{ old('institution_name') }}" required="required">
 							</div>
 
 							<div class="email mb-3">
 								<label class="sr-only" for="major">Your Major</label>
-								<input id="signup-name" name="major" type="text" class="form-control signup-name" placeholder="Major" required="required">
+								<input id="signup-name" name="major" type="text" class="form-control signup-name" placeholder="Major" value="{{old('major')}}" required="required">
 							</div>
 
 							<div class="email mb-3">
-								<label class="sr-only" for="year_of_entry">Your Major</label>
-								<input id="year_of_entry" name="year_of_entry" type="number" min="1900" max="2100" class="form-control signup-name" placeholder="Year of entry" required="required">
+								<label class="sr-only" for="year_of_entry"></label>
+								<input id="year_of_entry" name="year_of_entry" type="number" min="1900" max="2100" class="form-control signup-name" placeholder="Year of entry" value="{{old('year_of_entry')}}" required="required">
 							</div>
 
 

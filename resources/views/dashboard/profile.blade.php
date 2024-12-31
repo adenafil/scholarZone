@@ -51,7 +51,6 @@
                                         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
                                         <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
                                     </svg>
-                                    <span class="icon-badge">3</span>
                                 </a><!--//dropdown-toggle-->
 
                             </div><!--//app-utility-item-->
@@ -229,23 +228,23 @@
 									</div>
 								    <div class="mb-3">
 									    <label for="setting-input-3" class="form-label">Emaill Address</label>
-									    <input name="email" type="email" class="form-control" id="setting-input-3" placeholder="Email address" value="{{$user->email}}">
+									    <input id="setting-input-3" name="email" type="email" class="form-control"  placeholder="Email address" value="{{$user->email}}">
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Phone Number</label>
-										<input name="phone_number" type="number" class="form-control" id="setting-input-2" value="{{$user->phone_number}}" placeholder="+62">
+										<label for="setting-input-3" class="form-label">Phone Number</label>
+										<input name="phone_number" type="number" class="form-control" id="setting-input-3" value="{{$user->phone_number}}" placeholder="+62">
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Address</label>
-										<textarea name="address" type="text" class="form-control" id="setting-input-2" style="resize: none; overflow: hidden; height: 100px;" placeholder="Address">{{$user->address ?? ""}}</textarea>
+										<label for="setting-input-4" class="form-label">Address</label>
+										<textarea name="address" type="text" class="form-control" id="setting-input-4" style="resize: none; overflow: hidden; height: 100px;" placeholder="Address">{{$user->address ?? ""}}</textarea>
 									</div>
 
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Gender</label>
-										<select name="gender" class="form-select" aria-label="Default select example">
+										<label for="setting-input-5" class="form-label">Gender</label>
+										<select name="gender" class="form-select" aria-label="Default select example" id="setting-input-5">
 											<option value="1"
                                             @if($user->gender == 1)
                                                 selected
@@ -260,18 +259,18 @@
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">City</label>
-										<input name="city" type="text" class="form-control" id="setting-input-2" value="{{$user->city}}" placeholder="City">
+										<label for="setting-input-6" class="form-label">City</label>
+										<input name="city" type="text" class="form-control" id="setting-input-6" value="{{$user->city}}" placeholder="City">
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Password</label>
-										<input name="password" type="password" class="form-control" id="setting-input-2" value="{{$user->password}}" placeholder="Password">
+										<label for="setting-input-7" class="form-label">Password</label>
+										<input name="password" type="password" class="form-control" id="setting-input-7" value="{{$user->password}}" placeholder="Password">
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Current Level Of Eduaction</label>
-										<select name="education_level" class="form-select" aria-label="Default select example">
+										<label for="setting-input-8" class="form-label">Current Level Of Eduaction</label>
+										<select id="setting-input-8" name="education_level" class="form-select" aria-label="Default select example">
 											<option value="1"
                                             @if($user->education_level == 1) selected @endif
                                             >SMA</option>
@@ -288,13 +287,13 @@
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-1" class="form-label">School / University Name</label>
-										<input name="school_name" type="text" class="form-control" id="setting-input-1" value="{{$user->school_name}}" placeholder="Universitas Ngawi">
+										<label for="setting-input-9" class="form-label">School / University Name</label>
+										<input name="school_name" type="text" class="form-control" id="setting-input-9" value="{{$user->school_name}}" placeholder="Universitas Ngawi">
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-1" class="form-label">Major / Study Program</label>
-										<input name="major" type="text" class="form-control" id="setting-input-1" placeholder="Bachelor's Degree" value="{{$user->major}}">
+										<label for="setting-input-10" class="form-label">Major / Study Program</label>
+										<input name="major" type="text" class="form-control" id="setting-input-10" placeholder="Bachelor's Degree" value="{{$user->major}}">
 									</div>
 
 

@@ -51,7 +51,6 @@
                                         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
                                         <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
                                     </svg>
-                                    <span class="icon-badge">3</span>
                                 </a><!--//dropdown-toggle-->
 
                                 <div class="dropdown-menu p-0" aria-labelledby="notifications-dropdown-toggle">
@@ -309,8 +308,8 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 									    <input name="email" type="email" class="form-control" id="setting-input-3" value="{{$user->email ?? ""}}">
 									</div>
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Gender</label>
-										<select name="gender" class="form-select" aria-label="Default select example">
+										<label for="setting-input-4" class="form-label">Gender</label>
+										<select id="setting-input-4" name="gender" class="form-select" aria-label="Default select example">
                                             <option value="1"
                                             @if($user->gender == 1)
                                                 selected
@@ -324,23 +323,23 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 										</select>
 									</div>
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Address</label>
-										<textarea name="Address" type="text" class="form-control" id="setting-input-2" style="resize: none; overflow: hidden; height: 100px;" placeholder="Address">{{$user->address ?? ""}}</textarea>
+										<label for="setting-input-5" class="form-label">Address</label>
+										<textarea name="Address" type="text" class="form-control" id="setting-input-5" style="resize: none; overflow: hidden; height: 100px;" placeholder="Address">{{$user->address ?? ""}}</textarea>
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Phone Number</label>
-										<input name="phone_number" type="number" class="form-control" id="setting-input-2" value="{{$user->phone_number ?? ""}}" placeholder="+62">
+										<label for="setting-input-6" class="form-label">Phone Number</label>
+										<input name="phone_number" type="number" class="form-control" id="setting-input-6" value="{{$user->phone_number ?? ""}}" placeholder="+62">
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Guardian's Name</label>
-										<input name="guardian_name" type="text" class="form-control" id="setting-input-2" value="{{$user->guardian_name ?? ""}}" placeholder="Guardian's Name">
+										<label for="setting-input-7" class="form-label">Guardian's Name</label>
+										<input name="guardian_name" type="text" class="form-control" id="setting-input-7" value="{{$user->guardian_name ?? ""}}" placeholder="Guardian's Name">
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Parent's Occupation</label>
-										<input name="parent_occupation" type="text" class="form-control" id="setting-input-2" value="{{$user->parent_occupation ?? ""}}" placeholder="Parent's Occupation">
+										<label for="setting-input-8" class="form-label">Parent's Occupation</label>
+										<input name="parent_occupation" type="text" class="form-control" id="setting-input-8" value="{{$user->parent_occupation ?? ""}}" placeholder="Parent's Occupation">
 									</div>
 
 
@@ -362,8 +361,8 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
                                     @csrf
                                     @method("PUT")
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Current Level Of Eduaction</label>
-										<select name="education_level" class="form-select" aria-label="2">
+										<label for="setting-input-9" class="form-label">Current Level Of Eduaction</label>
+										<select id="setting-input-9" name="education_level" class="form-select" aria-label="2">
 
 											<option value="1"
                                             @if($user->education_level == 1)
@@ -392,29 +391,29 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-1" class="form-label">School / University Name</label>
-										<input name="school_name" type="text" class="form-control" id="setting-input-1" value="{{$user->school_name ?? ""}}" placeholder="Universitas Ngawi" required>
+										<label for="setting-input-10" class="form-label">School / University Name</label>
+										<input id="setting-input-10" name="school_name" type="text" class="form-control" id="setting-input-1" value="{{$user->school_name ?? ""}}" placeholder="Universitas Ngawi" required>
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-1" class="form-label">Major / Study Program</label>
-										<input name="major" type="text" class="form-control" id="setting-input-1" placeholder="Bachelor's Degree" value="{{$user->major}}" required>
+										<label for="setting-input-11" class="form-label">Major / Study Program</label>
+										<input id="setting-input-11" name="major" type="text" class="form-control" id="setting-input-1" placeholder="Bachelor's Degree" value="{{$user->major}}" required>
 									</div>
 
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Year of Graduation</label>
-										<input name="year_of_graduation" type="number" class="form-control" id="setting-input-2" value="{{$user->year_of_graduation}}" placeholder="2050" min="1990" max="2050">
+										<label for="setting-input-12" class="form-label">Year of Graduation</label>
+										<input name="year_of_graduation" type="number" class="form-control" id="setting-input-12" value="{{$user->year_of_graduation}}" placeholder="2050" min="1990" max="2050">
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Latest GPA or Report Card Grades</label>
-										<input name="latest_gpa" type="number" class="form-control" id="setting-input-2" value="{{$user->latest_gpa}}" placeholder="0" min="0" max="50">
+										<label for="setting-input-13" class="form-label">Latest GPA or Report Card Grades</label>
+										<input name="latest_gpa" type="number" class="form-control" id="setting-input-13" value="{{$user->latest_gpa}}" placeholder="0" min="0" max="50">
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Student ID Card</label>
-										<input class="form-control" type="file" name="picture_url" id="formFile">
+										<label for="setting-input-14" class="form-label">Student ID Card</label>
+										<input id="setting-input-14" class="form-control" type="file" name="picture_url" id="formFile">
 
                                         @if($user->picture_url)
                                             <div
@@ -463,8 +462,8 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
                                     @csrf
                                     @method('PUT')
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">Kartu Keluarga</label>
-										<input class="form-control" type="file" id="formFile" name="kartu_keluarga">
+										<label for="setting-input-15" class="form-label">Kartu Keluarga</label>
+										<input class="form-control" type="file" id="setting-input-15" name="kartu_keluarga">
 
                                         @if($user->kartu_keluarga)
                                             <div
@@ -497,8 +496,8 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 
 
                                     <div class="mb-3">
-										<label for="setting-input-2" class="form-label">Transkrip Nilai Terakhir / Raport Sekolah</label>
-										<input class="form-control" type="file" id="formFile" name="transkrip_nilai_terakhir">
+										<label for="setting-input-16" class="form-label">Transkrip Nilai Terakhir / Raport Sekolah</label>
+										<input class="form-control" type="file" id="setting-input-16" name="transkrip_nilai_terakhir">
 
                                         @if($user->transkrip_nilai_terakhir)
                                             <div
@@ -530,8 +529,8 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 
 
                                     <div class="mb-3">
-										<label for="setting-input-2" class="form-label">Ijazah Terakhir</label>
-										<input class="form-control" type="file" id="formFile" name="ijazah_terakhir">
+										<label for="setting-input-17" class="form-label">Ijazah Terakhir</label>
+										<input class="form-control" type="file" id="setting-input-17" name="ijazah_terakhir">
 
                                         @if($user->ijazah_terakhir)
                                             <div
@@ -563,8 +562,8 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 
 
                                     <div class="mb-3">
-										<label for="setting-input-2" class="form-label">Portofolio / Resume</label>
-										<input class="form-control" type="file" id="formFile" name="portofolio">
+										<label for="setting-input-18" class="form-label">Portofolio / Resume</label>
+										<input class="form-control" type="file" id="setting-input-18" name="portofolio">
 
                                         @if($user->portofolio)
                                             <div

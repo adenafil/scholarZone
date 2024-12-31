@@ -180,7 +180,7 @@ https://templatemo.com/tm-586-scholar
                 yang menarik, hingga persiapan
                 wawancara..</p>
               <div class="main-button">
-                <a href="#">Click Here</a>
+                <a href="{{route('dashboard.help')}}">Click Here</a>
               </div>
             </div>
           </div>
@@ -198,7 +198,7 @@ https://templatemo.com/tm-586-scholar
                 beasiswa dari teman-teman sesama
                 pemburu beasiswa..</p>
               <div class="main-button">
-                <a href="#">Click Here</a>
+                <a href="https://t.me/beasiswa">Click Here</a>
               </div>
             </div>
           </div>
@@ -215,7 +215,7 @@ https://templatemo.com/tm-586-scholar
                 sumber yang telah kami kumpulkan
                 khusus untukmu..</p>
               <div class="main-button">
-                <a href="#">Click Here</a>
+                <a href="{{route('dashboard.scholarships')}}">Click Here</a>
               </div>
             </div>
           </div>
@@ -286,7 +286,7 @@ https://templatemo.com/tm-586-scholar
             <p>Scholarzone adalah platform digital yang dirancang untuk membantu pelajar dan mahasiswa menemukan peluang beasiswa yang sesuai dengan kebutuhan mereka. Kami percaya bahwa setiap individu memiliki hak untuk mengakses pendidikan berkualitas tanpa terkendala biaya. Oleh karena itu, Scholarzone hadir untuk menjadi solusi dalam perjalanan meraih pendidikan impian.
             </p>
             <div class="main-button">
-              <a href="#">Discover More</a>
+              <a href="{{route('dashboard.scholarships')}}">Discover More</a>
             </div>
           </div>
         </div>
@@ -326,13 +326,16 @@ https://templatemo.com/tm-586-scholar
               <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 {{ implode(' ', $scholarship->categories->pluck('name')->toArray()) }}">
                   <div class="events_item">
                       <div class="thumb">
-                          <a href="#" "><img style="object-fit: cover;" src="{{$scholarship->image_header}}" class="scholarship-text" alt=""></a>
+                          <a href="{{$scholarship->information_link}}" "><img style="object-fit: cover;" src="{{$scholarship->image_header}}" class="scholarship-text" alt=""></a>
                           <span class="category">{{ implode(', ', $scholarship->categories->pluck('name')->toArray()) }}</span>
 
                       </div>
                       <div class="down-content">
                           <span class="author">{{$scholarship->country}}</span>
-                          <h4 class="text-truncate" data-bs-toggle="tooltip" title="{{$scholarship->title}}">{{$scholarship->title}}</h4>
+                          <h4 class="h4 text-truncate" data-bs-toggle="tooltip" title="{{$scholarship->title}}">
+                              <a href="{{$scholarship->information_link}}" style="color: black">                              {{$scholarship->title}}
+                              </a>
+                          </h4>
                       </div>
                   </div>
               </div>
@@ -388,15 +391,15 @@ https://templatemo.com/tm-586-scholar
             <div class="item">
               <p>ScholarZone benar-benar membantu saya menemukan beasiswa yang sesuai dengan jurusan saya</p>
               <div class="author">
-                <img src="/homepage/assets/images/testimonial-author.jpg" alt="">
+                <img src="https://gapura.uisi.ac.id/assets/upload/user/300x300/f4bc37ead96bf359bdd2736ba1b36b86.jpg" alt="">
                 <span class="category">Mahasiswi Akuntansi</span>
-                <h4>Dina</h4>
+                <h4>Budi</h4>
               </div>
             </div>
             <div class="item">
               <p>“Fitur komunitasnya luar biasa! Saya mendapatkan banyak tips dari teman-teman yang sudah lolos beasiswa”</p>
               <div class="author">
-                <img src="assets/images/testimonial-author.jpg" alt="">
+                <img style="object-fit: cover; width: 90px; height: 90px;" src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQX2zrwqVMm5lcD277n5WWcPMw7rM9eMj8UIDGHVT-ZbsmRHejE1i6cqPzPi3Hu6w1j3T9u4ZrwgFe3rMU" alt="">
                 <span class="category">Siswa SMK</span>
                 <h4>Bayu</h4>
               </div>
@@ -404,7 +407,7 @@ https://templatemo.com/tm-586-scholar
             <div class="item">
               <p>“Saya suka fitur panduan lengkapnya! ScholarZone membuat proses pendaftaran yang awalnya rumit jadi lebih sederhana”</p>
               <div class="author">
-                <img src="assets/images/testimonial-author.jpg" alt="">
+                <img src="https://gapura.uisi.ac.id/assets/upload/user/300x300/8ad347812e526dec70649946659d2005.JPG" alt="">
                 <span class="category">Mahasiswa Informatika</span>
                 <h4>Lukman</h4>
               </div>
@@ -466,7 +469,7 @@ https://templatemo.com/tm-586-scholar
                                       <h6>{{$scholarship->end_scholarship_date}}</h6>
                                   </li>
                               </ul>
-                              <a href="#"><i class="fa fa-angle-right"></i></a>
+                              <a href="{{$scholarship->information_link}}"><i class="fa fa-angle-right"></i></a>
                           </div>
 
                       </div>
@@ -492,7 +495,20 @@ https://templatemo.com/tm-586-scholar
         </div>
         <div class="col-lg-6">
           <div class="contact-us-content">
-            <form id="contact-form" action="" method="post">
+              <!-- Toast Container -->
+              <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                  <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                      <div class="d-flex">
+                          <div class="toast-body">
+                              Pesan berhasil dikirim!
+                          </div>
+                          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                      </div>
+                  </div>
+              </div>
+
+
+              <div id="contact-form" action="#" method="post">
               <div class="row">
                 <div class="col-lg-12">
                   <fieldset>
@@ -511,11 +527,13 @@ https://templatemo.com/tm-586-scholar
                 </div>
                 <div class="col-lg-12">
                   <fieldset>
-                    <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
+
+
+                      <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
                   </fieldset>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
@@ -525,10 +543,12 @@ https://templatemo.com/tm-586-scholar
   <footer>
     <div class="container">
       <div class="col-lg-12">
-        <p>Copyright © 2025 SCHOLARZONE. All rights reserved. &nbsp;&nbsp;&nbsp; Design: <a href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a> Distribution: <a href="https://themewagon.com" rel="nofollow" target="_blank">ThemeWagon</a></p>
+        <p>Copyright © 2025 SCHOLARZONE. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
+
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
   <script src="/homepage/vendor/jquery/jquery.min.js"></script>
@@ -541,11 +561,27 @@ https://templatemo.com/tm-586-scholar
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     tooltipTriggerList.forEach(function (tooltipTriggerEl) {
       new bootstrap.Tooltip(tooltipTriggerEl);
     });
+
+    document.getElementById('form-submit').addEventListener('click', function (event) {
+        event.preventDefault(); // Mencegah aksi default form submit (opsional)
+
+        // Ambil elemen toast
+        const toastElement = document.getElementById('successToast');
+
+        // Buat instance toast
+        const toast = new bootstrap.Toast(toastElement);
+
+        // Tampilkan toast
+        toast.show();
+    });
+
   </script>
   </body>
 </html>

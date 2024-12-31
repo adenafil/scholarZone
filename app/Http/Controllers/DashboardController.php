@@ -29,10 +29,27 @@ class DashboardController extends Controller
         return view('dashboard.overview', compact('total_beasiswa_sma', 'total_beasiswa_s1', 'total_beasiswa_s2', 'total_beasiswa_s3'));
     }
 
-    public function applications() {
-        $applications = ApplyBeasiswa::query()->paginate(6);
+    public function applications(Request $request) {
+
+        if ($request->has('search')) {
+            $applications = ApplyBeasiswa::query()
+                ->join('beasiswas', 'apply_beasiswas.beasiswa_id', '=', 'beasiswas.id') // Sesuaikan nama tabel dan kolom
+                ->where('beasiswas.title', 'like', '%' . $request->get('search') . '%')
+                ->select('apply_beasiswas.*') // Pilih kolom yang diinginkan
+                ->paginate(6);
+        } else {
+            $applications = ApplyBeasiswa::query()->paginate(6);
+        }
+
 
         return response()->view('dashboard.applications', compact('applications'));
+    }
+
+    public function removed_applications(Request $request, $id) {
+        ApplyBeasiswa::query()->where('id', $id)->delete();
+        alert()->success('Success!','Application Deleted Successfully');
+        return back();
+
     }
 
     public function scholarships(Request $request) {

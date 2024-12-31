@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/dashboard/overview', 'overview')->name('dashboard');
         Route::get('/dashboard/applications', 'applications')->name('dashboard.applications');
+        Route::delete('/dashboard/applications/{id}', 'removed_applications')->name('dashboard.applications.delete');
 
         Route::get('/dashboard/scholarships', 'scholarships')->name('dashboard.scholarships');
         Route::put('/dashboard/scholarships/{id}', 'apply_scholarship')->name('dashboard.apply_scholarships');
