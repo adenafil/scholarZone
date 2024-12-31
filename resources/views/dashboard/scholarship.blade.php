@@ -319,15 +319,20 @@
                                                             View
                                                         </a>
 
-                                                        <a href="{{$scholarship->enroll_link}}"
-                                                           class="btn btn-sm btn-primary text-white mt-2"
-                                                           style="width: 80px; background-color: rgb(21, 163, 98); transition: background-color 0.3s;"
-                                                           onmouseover="this.style.backgroundColor='#198754'"
-                                                           onmouseout="this.style.backgroundColor='rgb(21, 163, 98)'"
-                                                           onmousedown="this.style.backgroundColor='#145c39'"
-                                                           onmouseup="this.style.backgroundColor='#198754'">
-                                                            Apply
-                                                        </a>
+
+                                                        <form method="POST" action="{{route('dashboard.apply_scholarships', ['id' => $scholarship->id])}}">
+                                                            @csrf
+                                                            @method("PUT")
+                                                            <button href="{{$scholarship->enroll_link}}"
+                                                                    class="btn btn-sm btn-primary text-white mt-2"
+                                                                    style="width: 80px; background-color: rgb(21, 163, 98); transition: background-color 0.3s;"
+                                                                    onmouseover="this.style.backgroundColor='#198754'"
+                                                                    onmouseout="this.style.backgroundColor='rgb(21, 163, 98)'"
+                                                                    onmousedown="this.style.backgroundColor='#145c39'"
+                                                                    onmouseup="this.style.backgroundColor='#198754'">
+                                                                Apply
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </td>
                                             </tr>

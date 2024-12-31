@@ -18,6 +18,9 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('beasiswa_id')->references('id')->on('beasiswas');
             $table->timestamps();
+
+            $table->unique(['user_id', 'beasiswa_id'], 'user_beasiswa_unique');
+
         });
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ApplyBeasiswa;
 use App\Models\Beasiswa;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -29,7 +30,9 @@ class DashboardController extends Controller
     }
 
     public function applications() {
-        return response()->view('dashboard.applications');
+        $applications = ApplyBeasiswa::query()->paginate(6);
+
+        return response()->view('dashboard.applications', compact('applications'));
     }
 
     public function scholarships(Request $request) {
@@ -45,10 +48,20 @@ class DashboardController extends Controller
         return response()->view('dashboard.scholarship', compact('scholarships'));
     }
 
-    public function apply_scholarships($id) {
+    public function apply_scholarship(Request $request, $id) {
         $beasiswa = Beasiswa::query()->where('id', $id)->first();
+        $user = User::findOrFail(auth()->user()->id);
+        // Gunakan upsert dengan dua parameter
+        ApplyBeasiswa::upsert(
+            [
+                'user_id' => $user->id,
+                'beasiswa_id' => $beasiswa->id,
+            ],
+            ['user_id', 'beasiswa_id'],
+            ['updated_at']
+        );
 
-        $link_apply = $beasiswa->link_apply;
+        return redirect($beasiswa->enroll_link);
     }
 
     public function documents() {
