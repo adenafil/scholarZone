@@ -254,9 +254,11 @@
 										</thead>
 										<tbody>
 
-                                        @foreach ($scholarships as $scholarship)
+                                        @foreach ($scholarships as $key => $scholarship)
                                             <tr>
-                                                <td class="cell"><span class="mx-1">{{$scholarship->id}}</span></td>
+                                                <td class="cell"><span class="mx-1">
+                                                    {{ ($scholarships->currentPage() - 1) * $scholarships->perPage() + $key + 1 }}
+                                                </td>
                                                 <td class="cell">
                                                     <div class="text-center">
                                                         <img src="../{{$scholarship->image_url}}" class="rounded" style="width: 110px; height: 110px; object-fit:cover;" alt="...">
@@ -371,13 +373,14 @@
                                         </thead>
                                         <tbody>
 
-                                        @foreach ($scholarships as $scholarship)
+                                        @foreach ($scholarships as $key => $scholarship)
                                             @if($scholarship->categories->contains(function ($category) {
                                                 return strpos(strtolower($category->name), 'sma') !== false;
                                             }))
                                                 <tr>
-                                                    <td class="cell"><span class="mx-1">{{$scholarship->id}}</span></td>
-                                                    <td class="cell">
+                                                    <td class="cell"><span class="mx-1">
+                                                        {{ ($scholarships->currentPage() - 1) * $scholarships->perPage() + $key + 1 }}
+                                                    </td>                                                    <td class="cell">
                                                         <div class="text-center">
                                                             <img src="../{{$scholarship->image_url}}" class="rounded" style="width: 110px; height: 110px; object-fit:cover;" alt="...">
                                                         </div>
@@ -486,13 +489,14 @@
                                         </thead>
                                         <tbody>
 
-                                        @foreach ($scholarships as $scholarship)
+                                        @foreach ($scholarships as $key => $scholarship)
                                             @if($scholarship->categories->contains(function ($category) {
                                                 return strpos(strtolower($category->name), 's1') !== false;
                                             }))
                                                 <tr>
-                                                    <td class="cell"><span class="mx-1">{{$scholarship->id}}</span></td>
-                                                    <td class="cell">
+                                                    <td class="cell"><span class="mx-1">
+                                                        {{ ($scholarships->currentPage() - 1) * $scholarships->perPage() + $key + 1 }}
+                                                    </td>                                                    <td class="cell">
                                                         <div class="text-center">
                                                             <img src="../{{$scholarship->image_url}}" class="rounded" style="width: 110px; height: 110px; object-fit:cover;" alt="...">
                                                         </div>
@@ -601,13 +605,14 @@
                                         </thead>
                                         <tbody>
 
-                                        @foreach ($scholarships as $scholarship)
+                                        @foreach ($scholarships as $key => $scholarship)
                                             @if($scholarship->categories->contains(function ($category) {
                                                 return strpos(strtolower($category->name), 's2') !== false;
                                             }))
                                                 <tr>
-                                                    <td class="cell"><span class="mx-1">{{$scholarship->id}}</span></td>
-                                                    <td class="cell">
+                                                    <td class="cell"><span class="mx-1">
+                                                        {{ ($scholarships->currentPage() - 1) * $scholarships->perPage() + $key + 1 }}
+                                                    </td>                                                    <td class="cell">
                                                         <div class="text-center">
                                                             <img src="../{{$scholarship->image_url}}" class="rounded" style="width: 110px; height: 110px; object-fit:cover;" alt="...">
                                                         </div>
@@ -717,13 +722,14 @@
                                         </thead>
                                         <tbody>
 
-                                        @foreach ($scholarships as $scholarship)
+                                        @foreach ($scholarships as $key => $scholarship)
                                             @if($scholarship->categories->contains(function ($category) {
                                                 return strpos(strtolower($category->name), 's3') !== false;
                                             }))
                                                 <tr>
-                                                    <td class="cell"><span class="mx-1">{{$scholarship->id}}</span></td>
-                                                    <td class="cell">
+                                                    <td class="cell"><span class="mx-1">
+                                                        {{ ($scholarships->currentPage() - 1) * $scholarships->perPage() + $key + 1 }}
+                                                    </td>                                                    <td class="cell">
                                                         <div class="text-center">
                                                             <img src="../{{$scholarship->image_url}}" class="rounded" style="width: 110px; height: 110px; object-fit:cover;" alt="...">
                                                         </div>

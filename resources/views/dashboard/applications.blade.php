@@ -220,16 +220,6 @@
 					                </form>
 
 							    </div><!--//col-->
-							    <div class="col-auto">
-
-								    <select class="form-select w-auto" >
-										  <option selected value="option-1">All</option>
-										  <option value="option-2">This week</option>
-										  <option value="option-3">This month</option>
-										  <option value="option-4">Last 3 months</option>
-
-									</select>
-							    </div>
 						    </div><!--//row-->
 					    </div><!--//table-utilities-->
 				    </div><!--//col-auto-->
@@ -263,21 +253,27 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td class="cell"><span class="mx-1">1</span></td>
-												<td class="cell"><span class="truncate">Beasiswa Sekolah Gratis di SMA Unggulan CT ARSA Foundation Sukoharjo Tahun 2025 – 2026 untuk Lulusan SMP/MTs</span></td>
-												<td class="cell">2025-01-07</td>
-												<td class="cell">2025-01-23</td>
-												<td class="cell"><span class="badge bg-info">SMA</span></td>
-												<td class="cell">
-													<div style="
+                                        @foreach ($applications as $key => $application)
+                                            <tr>
+                                                <td class="cell">
+            <span class="mx-1">
+                {{ ($applications->currentPage() - 1) * $applications->perPage() + $key + 1 }}
+            </span>
+                                                </td>
+                                                <td class="cell"><span class="truncate">{{$application->beasiswa[0]->title}}</span></td>
+                                                <td class="cell">{{$application->updated_at}}</td>
+                                                <td class="cell">{{$application->beasiswa[0]->end_scholarship_date}}</td>
+                                                <td class="cell"><span class="badge bg-info">{{ implode(', ', $application->beasiswa[0]->categories->pluck('name')->toArray()) }}</span></td>
+                                                <td class="cell">
+                                                    <div style="
 													display: flex;
 													flex-direction: column;">
-														<a href="#" class="btn btn-sm btn-primary text-white mt-1">View</a>
-														<a href="#" class="btn btn-sm btn-danger text-white mt-1">Remove</a>
-													</div>
-												</td>
-											</tr>
+                                                        <a href="{{$application->beasiswa[0]->information_link}}" class="btn btn-sm btn-primary text-white mt-1">View</a>
+                                                        <a href="#" class="btn btn-sm btn-danger text-white mt-1">Remove</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
 
 										</tbody>
 									</table>
@@ -285,19 +281,9 @@
 
 						    </div><!--//app-card-body-->
 						</div><!--//app-card-->
-						<nav class="app-pagination">
-							<ul class="pagination justify-content-center">
-								<li class="page-item disabled">
-									<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-							    </li>
-								<li class="page-item active"><a class="page-link" href="#">1</a></li>
-								<li class="page-item"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item">
-								    <a class="page-link" href="#">Next</a>
-								</li>
-							</ul>
-						</nav><!--//app-pagination-->
+                        <div class="d-flex justify-content-center app-pagination">
+                            {{ $applications->appends(['search' => request()->get('search')])->links() }}
+                        </div>
 
 			        </div><!--//tab-pane-->
 
