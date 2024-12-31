@@ -1,3 +1,4 @@
+@php use Carbon\Carbon; @endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -211,7 +212,7 @@
 							    <div class="col-auto">
 								    <form class="table-search-form row gx-1 align-items-center">
 					                    <div class="col-auto">
-					                        <input type="text" id="search-orders" name="searchorders" class="form-control search-orders" placeholder="Search">
+					                        <input type="text" id="search-orders" name="search" class="form-control search-orders" placeholder="Search">
 					                    </div>
 					                    <div class="col-auto">
 					                        <button type="submit" class="btn app-btn-secondary">Search</button>
@@ -219,16 +220,6 @@
 					                </form>
 
 							    </div><!--//col-->
-							    <div class="col-auto">
-
-								    <select class="form-select w-auto" >
-										  <option selected value="option-1">All</option>
-										  <option value="option-2">This week</option>
-										  <option value="option-3">This month</option>
-										  <option value="option-4">Last 3 months</option>
-
-									</select>
-							    </div>
 						    </div><!--//row-->
 					    </div><!--//table-utilities-->
 				    </div><!--//col-auto-->
@@ -236,16 +227,16 @@
 
 
 			    <nav id="orders-table-tab" class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
-				    <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#orders-all" role="tab" aria-controls="orders-all" aria-selected="true">All</a>
-				    <a class="flex-sm-fill text-sm-center nav-link"  id="orders-paid-tab" data-bs-toggle="tab" href="#orders-paid" role="tab" aria-controls="orders-paid" aria-selected="false">SMA</a>
-				    <a class="flex-sm-fill text-sm-center nav-link" id="orders-pending-tab" data-bs-toggle="tab" href="#orders-pending" role="tab" aria-controls="orders-pending" aria-selected="false">S1</a>
-				    <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab" data-bs-toggle="tab" href="#orders-cancelled" role="tab" aria-controls="orders-cancelled" aria-selected="false">S2</a>
-				    <a class="flex-sm-fill text-sm-center nav-link" id="applications-s3-tab" data-bs-toggle="tab" href="#application-s3" role="tab" aria-controls="orders-cancelled" aria-selected="false">S3</a>
+				    <a class="flex-sm-fill text-sm-center nav-link active" id="category-all-tab" data-bs-toggle="tab" href="#category-all" role="tab" aria-controls="category-all" aria-selected="true">All</a>
+				    <a class="flex-sm-fill text-sm-center nav-link"  id="category-sma-tab" data-bs-toggle="tab" href="#category-sma" role="tab" aria-controls="category-sma" aria-selected="false">SMA</a>
+				    <a class="flex-sm-fill text-sm-center nav-link" id="category-s1-tab" data-bs-toggle="tab" href="#category-s1" role="tab" aria-controls="category-s1" aria-selected="false">S1</a>
+				    <a class="flex-sm-fill text-sm-center nav-link" id="category-s2-tab" data-bs-toggle="tab" href="#category-s2" role="tab" aria-controls="category-s2" aria-selected="false">S2</a>
+				    <a class="flex-sm-fill text-sm-center nav-link" id="category-s3-tab" data-bs-toggle="tab" href="#category-s3" role="tab" aria-controls="category-s3" aria-selected="false">S3</a>
 				</nav>
 
 
 				<div class="tab-content" id="orders-table-tab-content">
-			        <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+			        <div class="tab-pane fade show active" id="category-all" role="tabpanel" aria-labelledby="category-all-tab">
 					    <div class="app-card app-card-orders-table shadow-sm mb-5">
 						    <div class="app-card-body">
 							    <div class="table-responsive">
@@ -262,43 +253,87 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td class="cell"><span class="mx-1">1</span></td>
-												<td class="cell">
-													<div class="text-center">
-														<img src="https://ieltspresso.com/wp-content/uploads/2024/04/kaist2.jpg" class="rounded" style="width: 110px; height: 110px; object-fit:fill;" alt="...">
-													</div>
-												</td>
-												<td class="cell">2025-01-07</td>
-												<td class="cell">2025-01-23</td>
-												<td class="cell"><span class="badge bg-info">SMA</span></td>
-												<td class="cell">
-													<span class="badge bg-primary">Open</span>
-												</td>
-												<td class="cell">
-													<div class="d-flex flex-column justify-content-center align-items-center">
-														<a href="#"
-														   class="btn btn-sm btn-primary bg-secondary text-white mt-2"
-														   style="width: 80px; transition: background-color 0.3s; background-color: #6c757d;"
-														   onmouseover="this.style.backgroundColor='#5a6268'"
-														   onmouseout="this.style.backgroundColor='#6c757d'"
-														   onmousedown="this.style.backgroundColor='#343a40'"
-														   onmouseup="this.style.backgroundColor='#5a6268'">
-															View
-														</a>
 
-														<a href="#"
-														   class="btn btn-sm btn-primary text-white mt-2"
-														   style="width: 80px; background-color: rgb(21, 163, 98); transition: background-color 0.3s;"
-														   onmouseover="this.style.backgroundColor='#198754'"
-														   onmouseout="this.style.backgroundColor='rgb(21, 163, 98)'"
-														   onmousedown="this.style.backgroundColor='#145c39'"
-														   onmouseup="this.style.backgroundColor='#198754'">
-															Apply
-														</a>
-													</div>
-												</td>
-											</tr>
+                                        @foreach ($scholarships as $scholarship)
+                                            <tr>
+                                                <td class="cell"><span class="mx-1">{{$scholarship->id}}</span></td>
+                                                <td class="cell">
+                                                    <div class="text-center">
+                                                        <img src="../{{$scholarship->image_url}}" class="rounded" style="width: 110px; height: 110px; object-fit:cover;" alt="...">
+                                                    </div>
+                                                </td>
+                                                <td class="cell" style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+    <span class="text-truncate"
+          title="{{ $scholarship->title }}"
+          data-bs-toggle="modal"
+          data-bs-target="#detailModal-{{ $scholarship->id }}"
+          style="cursor: pointer;">
+        {{ $scholarship->title }}
+    </span>
+                                                </td>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailModal-{{ $scholarship->id }}" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="detailModalLabel">Detail Title</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                {{ $scholarship->title }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <td class="cell">{{$scholarship->end_scholarship_date}}</td>
+                                                <td class="cell"><span class="badge bg-info">
+                                                {{ implode(', ', $scholarship->categories->pluck('name')->toArray()) }}</span>
+                                                </td>
+
+                                                <td class="cell">
+                                                    @php
+                                                        $endDate = Carbon::parse($scholarship->end_scholarship_date);  // Tanggal dari database
+                                                        $today = Carbon::today(); // Tanggal hari ini
+                                                    @endphp
+
+                                                    <span class="badge bg-primary">
+    @if($endDate <= $today)
+                                                            Closed
+                                                        @else
+                                                            Open
+                                                        @endif
+</span>
+                                                </td>
+
+                                                <td class="cell">
+                                                    <div class="d-flex flex-column justify-content-center align-items-center">
+                                                        <a href="{{$scholarship->information_link}}"
+                                                           class="btn btn-sm btn-primary bg-secondary text-white mt-2"
+                                                           style="width: 80px; transition: background-color 0.3s; background-color: #6c757d;"
+                                                           onmouseover="this.style.backgroundColor='#5a6268'"
+                                                           onmouseout="this.style.backgroundColor='#6c757d'"
+                                                           onmousedown="this.style.backgroundColor='#343a40'"
+                                                           onmouseup="this.style.backgroundColor='#5a6268'">
+                                                            View
+                                                        </a>
+
+                                                        <a href="{{$scholarship->enroll_link}}"
+                                                           class="btn btn-sm btn-primary text-white mt-2"
+                                                           style="width: 80px; background-color: rgb(21, 163, 98); transition: background-color 0.3s;"
+                                                           onmouseover="this.style.backgroundColor='#198754'"
+                                                           onmouseout="this.style.backgroundColor='rgb(21, 163, 98)'"
+                                                           onmousedown="this.style.backgroundColor='#145c39'"
+                                                           onmouseup="this.style.backgroundColor='#198754'">
+                                                            Apply
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        @endforeach
+
 
 										</tbody>
 									</table>
@@ -306,155 +341,476 @@
 
 						    </div><!--//app-card-body-->
 						</div><!--//app-card-->
-						<nav class="app-pagination">
-							<ul class="pagination justify-content-center">
-								<li class="page-item disabled">
-									<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-							    </li>
-								<li class="page-item active"><a class="page-link" href="#">1</a></li>
-								<li class="page-item"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item">
-								    <a class="page-link" href="#">Next</a>
-								</li>
-							</ul>
-						</nav><!--//app-pagination-->
+
+                        <div class="d-flex justify-content-center app-pagination">
+                            {{ $scholarships->appends(['search' => request()->get('search')])->links() }}
+                        </div>
 
 			        </div><!--//tab-pane-->
 
-			        <div class="tab-pane fade" id="orders-paid" role="tabpanel" aria-labelledby="orders-paid-tab">
-					    <div class="app-card app-card-orders-table mb-5">
-						    <div class="app-card-body">
-							    <div class="table-responsive">
+                    <div class="tab-pane fade show" id="category-sma" role="tabpanel" aria-labelledby="category-sma-tab">
+                        <div class="app-card app-card-orders-table shadow-sm mb-5">
+                            <div class="app-card-body">
+                                <div class="table-responsive">
+                                    <table class="table app-table-hover mb-0 text-center">
+                                        <thead>
+                                        <tr>
+                                            <th class="cell">No</th>
+                                            <th class="cell">Image</th>
+                                            <th class="cell">Title</th>
+                                            <th class="cell">Deadline Date</th>
+                                            <th class="cell">Category</th>
+                                            <th class="cell">Status</th>
+                                            <th class="cell">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
 
-							        <table class="table mb-0 text-left">
-										<thead>
-											<tr>
-												<th class="cell">Order</th>
-												<th class="cell">Product</th>
-												<th class="cell">Customer</th>
-												<th class="cell">Date</th>
-												<th class="cell">Status</th>
-												<th class="cell">Total</th>
-												<th class="cell"></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td class="cell">#15346</td>
-												<td class="cell"><span class="truncate">Lorem ipsum dolor sit amet eget volutpat erat</span></td>
-												<td class="cell">John Sanders</td>
-												<td class="cell"><span>17 Oct</span><span class="note">2:16 PM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$259.35</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
+                                        @foreach ($scholarships as $scholarship)
+                                            @if($scholarship->categories->contains(function ($category) {
+                                                return strpos(strtolower($category->name), 'sma') !== false;
+                                            }))
+                                                <tr>
+                                                    <td class="cell"><span class="mx-1">{{$scholarship->id}}</span></td>
+                                                    <td class="cell">
+                                                        <div class="text-center">
+                                                            <img src="../{{$scholarship->image_url}}" class="rounded" style="width: 110px; height: 110px; object-fit:cover;" alt="...">
+                                                        </div>
+                                                    </td>
+                                                    <td class="cell" style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+    <span class="text-truncate"
+          title="{{ $scholarship->title }}"
+          data-bs-toggle="modal"
+          data-bs-target="#detailModal-{{ $scholarship->id }}"
+          style="cursor: pointer;">
+        {{ $scholarship->title }}
+    </span>
+                                                    </td>
 
-											<tr>
-												<td class="cell">#15344</td>
-												<td class="cell"><span class="truncate">Pellentesque diam imperdiet</span></td>
-												<td class="cell">Teresa Holland</td>
-												<td class="cell"><span class="cell-data">16 Oct</span><span class="note">01:16 AM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$123.00</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="detailModal-{{ $scholarship->id }}" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="detailModalLabel">Detail Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    {{ $scholarship->title }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-											<tr>
-												<td class="cell">#15343</td>
-												<td class="cell"><span class="truncate">Vestibulum a accumsan lectus sed mollis ipsum</span></td>
-												<td class="cell">Jayden Massey</td>
-												<td class="cell"><span class="cell-data">15 Oct</span><span class="note">8:07 PM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$199.00</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
+                                                    <td class="cell">{{$scholarship->end_scholarship_date}}</td>
+                                                    <td class="cell"><span class="badge bg-info">
+                                                {{ implode(', ', $scholarship->categories->pluck('name')->toArray()) }}</span>
+                                                    </td>
+
+                                                    <td class="cell">
+                                                        @php
+                                                            $endDate = Carbon::parse($scholarship->end_scholarship_date);  // Tanggal dari database
+                                                            $today = Carbon::today(); // Tanggal hari ini
+                                                        @endphp
+
+                                                        <span class="badge bg-primary">
+    @if($endDate <= $today)
+                                                                Closed
+                                                            @else
+                                                                Open
+                                                            @endif
+</span>
+                                                    </td>
+
+                                                    <td class="cell">
+                                                        <div class="d-flex flex-column justify-content-center align-items-center">
+                                                            <a href="{{$scholarship->information_link}}"
+                                                               class="btn btn-sm btn-primary bg-secondary text-white mt-2"
+                                                               style="width: 80px; transition: background-color 0.3s; background-color: #6c757d;"
+                                                               onmouseover="this.style.backgroundColor='#5a6268'"
+                                                               onmouseout="this.style.backgroundColor='#6c757d'"
+                                                               onmousedown="this.style.backgroundColor='#343a40'"
+                                                               onmouseup="this.style.backgroundColor='#5a6268'">
+                                                                View
+                                                            </a>
+
+                                                            <a href="{{$scholarship->enroll_link}}"
+                                                               class="btn btn-sm btn-primary text-white mt-2"
+                                                               style="width: 80px; background-color: rgb(21, 163, 98); transition: background-color 0.3s;"
+                                                               onmouseover="this.style.backgroundColor='#198754'"
+                                                               onmouseout="this.style.backgroundColor='rgb(21, 163, 98)'"
+                                                               onmousedown="this.style.backgroundColor='#145c39'"
+                                                               onmouseup="this.style.backgroundColor='#198754'">
+                                                                Apply
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
 
 
-											<tr>
-												<td class="cell">#15341</td>
-												<td class="cell"><span class="truncate">Morbi vulputate lacinia neque et sollicitudin</span></td>
-												<td class="cell">Raymond Atkins</td>
-												<td class="cell"><span class="cell-data">11 Oct</span><span class="note">11:18 AM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$678.26</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
+                                        </tbody>
+                                    </table>
+                                </div><!--//table-responsive-->
 
-										</tbody>
-									</table>
-						        </div><!--//table-responsive-->
-						    </div><!--//app-card-body-->
-						</div><!--//app-card-->
-			        </div><!--//tab-pane-->
+                            </div><!--//app-card-body-->
+                        </div><!--//app-card-->
 
-			        <div class="tab-pane fade" id="orders-pending" role="tabpanel" aria-labelledby="orders-pending-tab">
-					    <div class="app-card app-card-orders-table mb-5">
-						    <div class="app-card-body">
-							    <div class="table-responsive">
-							        <table class="table mb-0 text-left">
-										<thead>
-											<tr>
-												<th class="cell">Order</th>
-												<th class="cell">Product</th>
-												<th class="cell">Customer</th>
-												<th class="cell">Date</th>
-												<th class="cell">Status</th>
-												<th class="cell">Total</th>
-												<th class="cell"></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td class="cell">#15345</td>
-												<td class="cell"><span class="truncate">Consectetur adipiscing elit</span></td>
-												<td class="cell">Dylan Ambrose</td>
-												<td class="cell"><span class="cell-data">16 Oct</span><span class="note">03:16 AM</span></td>
-												<td class="cell"><span class="badge bg-warning">Pending</span></td>
-												<td class="cell">$96.20</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
-										</tbody>
-									</table>
-						        </div><!--//table-responsive-->
-						    </div><!--//app-card-body-->
-						</div><!--//app-card-->
-			        </div><!--//tab-pane-->
-			        <div class="tab-pane fade" id="orders-cancelled" role="tabpanel" aria-labelledby="orders-cancelled-tab">
-					    <div class="app-card app-card-orders-table mb-5">
-						    <div class="app-card-body">
-							    <div class="table-responsive">
-							        <table class="table mb-0 text-left">
-										<thead>
-											<tr>
-												<th class="cell">Order</th>
-												<th class="cell">Product</th>
-												<th class="cell">Customer</th>
-												<th class="cell">Date</th>
-												<th class="cell">Status</th>
-												<th class="cell">Total</th>
-												<th class="cell"></th>
-											</tr>
-										</thead>
-										<tbody>
+                        <div class="d-flex justify-content-center app-pagination">
+                            {{ $scholarships->appends(['search' => request()->get('search')])->links() }}
+                        </div>
 
-											<tr>
-												<td class="cell">#15342</td>
-												<td class="cell"><span class="truncate">Justo feugiat neque</span></td>
-												<td class="cell">Reina Brooks</td>
-												<td class="cell"><span class="cell-data">12 Oct</span><span class="note">04:23 PM</span></td>
-												<td class="cell"><span class="badge bg-danger">Cancelled</span></td>
-												<td class="cell">$59.00</td>
-												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
-											</tr>
+                    </div><!--//tab-pane-->
 
-										</tbody>
-									</table>
-						        </div><!--//table-responsive-->
-						    </div><!--//app-card-body-->
-						</div><!--//app-card-->
-			        </div><!--//tab-pane-->
-				</div><!--//tab-content-->
+                    <div class="tab-pane fade show" id="category-s1" role="tabpanel" aria-labelledby="category-s1-tab">
+                        <div class="app-card app-card-orders-table shadow-sm mb-5">
+                            <div class="app-card-body">
+                                <div class="table-responsive">
+                                    <table class="table app-table-hover mb-0 text-center">
+                                        <thead>
+                                        <tr>
+                                            <th class="cell">No</th>
+                                            <th class="cell">Image</th>
+                                            <th class="cell">Title</th>
+                                            <th class="cell">Deadline Date</th>
+                                            <th class="cell">Category</th>
+                                            <th class="cell">Status</th>
+                                            <th class="cell">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        @foreach ($scholarships as $scholarship)
+                                            @if($scholarship->categories->contains(function ($category) {
+                                                return strpos(strtolower($category->name), 's1') !== false;
+                                            }))
+                                                <tr>
+                                                    <td class="cell"><span class="mx-1">{{$scholarship->id}}</span></td>
+                                                    <td class="cell">
+                                                        <div class="text-center">
+                                                            <img src="../{{$scholarship->image_url}}" class="rounded" style="width: 110px; height: 110px; object-fit:cover;" alt="...">
+                                                        </div>
+                                                    </td>
+                                                    <td class="cell" style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+    <span class="text-truncate"
+          title="{{ $scholarship->title }}"
+          data-bs-toggle="modal"
+          data-bs-target="#detailModal-{{ $scholarship->id }}"
+          style="cursor: pointer;">
+        {{ $scholarship->title }}
+    </span>
+                                                    </td>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="detailModal-{{ $scholarship->id }}" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="detailModalLabel">Detail Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    {{ $scholarship->title }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <td class="cell">{{$scholarship->end_scholarship_date}}</td>
+                                                    <td class="cell"><span class="badge bg-info">
+                                                {{ implode(', ', $scholarship->categories->pluck('name')->toArray()) }}</span>
+                                                    </td>
+
+                                                    <td class="cell">
+                                                        @php
+                                                            $endDate = Carbon::parse($scholarship->end_scholarship_date);  // Tanggal dari database
+                                                            $today = Carbon::today(); // Tanggal hari ini
+                                                        @endphp
+
+                                                        <span class="badge bg-primary">
+    @if($endDate <= $today)
+                                                                Closed
+                                                            @else
+                                                                Open
+                                                            @endif
+</span>
+                                                    </td>
+
+                                                    <td class="cell">
+                                                        <div class="d-flex flex-column justify-content-center align-items-center">
+                                                            <a href="{{$scholarship->information_link}}"
+                                                               class="btn btn-sm btn-primary bg-secondary text-white mt-2"
+                                                               style="width: 80px; transition: background-color 0.3s; background-color: #6c757d;"
+                                                               onmouseover="this.style.backgroundColor='#5a6268'"
+                                                               onmouseout="this.style.backgroundColor='#6c757d'"
+                                                               onmousedown="this.style.backgroundColor='#343a40'"
+                                                               onmouseup="this.style.backgroundColor='#5a6268'">
+                                                                View
+                                                            </a>
+
+                                                            <a href="{{$scholarship->enroll_link}}"
+                                                               class="btn btn-sm btn-primary text-white mt-2"
+                                                               style="width: 80px; background-color: rgb(21, 163, 98); transition: background-color 0.3s;"
+                                                               onmouseover="this.style.backgroundColor='#198754'"
+                                                               onmouseout="this.style.backgroundColor='rgb(21, 163, 98)'"
+                                                               onmousedown="this.style.backgroundColor='#145c39'"
+                                                               onmouseup="this.style.backgroundColor='#198754'">
+                                                                Apply
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+
+
+                                        </tbody>
+                                    </table>
+                                </div><!--//table-responsive-->
+
+                            </div><!--//app-card-body-->
+                        </div><!--//app-card-->
+
+                        <div class="d-flex justify-content-center app-pagination">
+                            {{ $scholarships->appends(['search' => request()->get('search')])->links() }}
+                        </div>
+
+                    </div><!--//tab-pane-->
+
+                    <div class="tab-pane fade show" id="category-s2" role="tabpanel" aria-labelledby="category-s2-tab">
+                        <div class="app-card app-card-orders-table shadow-sm mb-5">
+                            <div class="app-card-body">
+                                <div class="table-responsive">
+                                    <table class="table app-table-hover mb-0 text-center">
+                                        <thead>
+                                        <tr>
+                                            <th class="cell">No</th>
+                                            <th class="cell">Image</th>
+                                            <th class="cell">Title</th>
+                                            <th class="cell">Deadline Date</th>
+                                            <th class="cell">Category</th>
+                                            <th class="cell">Status</th>
+                                            <th class="cell">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        @foreach ($scholarships as $scholarship)
+                                            @if($scholarship->categories->contains(function ($category) {
+                                                return strpos(strtolower($category->name), 's2') !== false;
+                                            }))
+                                                <tr>
+                                                    <td class="cell"><span class="mx-1">{{$scholarship->id}}</span></td>
+                                                    <td class="cell">
+                                                        <div class="text-center">
+                                                            <img src="../{{$scholarship->image_url}}" class="rounded" style="width: 110px; height: 110px; object-fit:cover;" alt="...">
+                                                        </div>
+                                                    </td>
+                                                    <td class="cell" style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+    <span class="text-truncate"
+          title="{{ $scholarship->title }}"
+          data-bs-toggle="modal"
+          data-bs-target="#detailModal-{{ $scholarship->id }}"
+          style="cursor: pointer;">
+        {{ $scholarship->title }}
+    </span>
+                                                    </td>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="detailModal-{{ $scholarship->id }}" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="detailModalLabel">Detail Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    {{ $scholarship->title }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <td class="cell">{{$scholarship->end_scholarship_date}}</td>
+                                                    <td class="cell"><span class="badge bg-info">
+                                                {{ implode(', ', $scholarship->categories->pluck('name')->toArray()) }}</span>
+                                                    </td>
+
+                                                    <td class="cell">
+                                                        @php
+                                                            $endDate = Carbon::parse($scholarship->end_scholarship_date);  // Tanggal dari database
+                                                            $today = Carbon::today(); // Tanggal hari ini
+                                                        @endphp
+
+                                                        <span class="badge bg-primary">
+    @if($endDate <= $today)
+                                                                Closed
+                                                            @else
+                                                                Open
+                                                            @endif
+</span>
+                                                    </td>
+
+                                                    <td class="cell">
+                                                        <div class="d-flex flex-column justify-content-center align-items-center">
+                                                            <a href="{{$scholarship->information_link}}"
+                                                               class="btn btn-sm btn-primary bg-secondary text-white mt-2"
+                                                               style="width: 80px; transition: background-color 0.3s; background-color: #6c757d;"
+                                                               onmouseover="this.style.backgroundColor='#5a6268'"
+                                                               onmouseout="this.style.backgroundColor='#6c757d'"
+                                                               onmousedown="this.style.backgroundColor='#343a40'"
+                                                               onmouseup="this.style.backgroundColor='#5a6268'">
+                                                                View
+                                                            </a>
+
+                                                            <a href="{{$scholarship->enroll_link}}"
+                                                               class="btn btn-sm btn-primary text-white mt-2"
+                                                               style="width: 80px; background-color: rgb(21, 163, 98); transition: background-color 0.3s;"
+                                                               onmouseover="this.style.backgroundColor='#198754'"
+                                                               onmouseout="this.style.backgroundColor='rgb(21, 163, 98)'"
+                                                               onmousedown="this.style.backgroundColor='#145c39'"
+                                                               onmouseup="this.style.backgroundColor='#198754'">
+                                                                Apply
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+
+
+                                        </tbody>
+                                    </table>
+                                </div><!--//table-responsive-->
+
+                            </div><!--//app-card-body-->
+                        </div><!--//app-card-->
+
+                        <div class="d-flex justify-content-center app-pagination">
+                            {{ $scholarships->appends(['search' => request()->get('search')])->links() }}
+                        </div>
+
+                    </div><!--//tab-pane-->
+
+
+                    <div class="tab-pane fade show" id="category-s3" role="tabpanel" aria-labelledby="category-s3-tab">
+                        <div class="app-card app-card-orders-table shadow-sm mb-5">
+                            <div class="app-card-body">
+                                <div class="table-responsive">
+                                    <table class="table app-table-hover mb-0 text-center">
+                                        <thead>
+                                        <tr>
+                                            <th class="cell">No</th>
+                                            <th class="cell">Image</th>
+                                            <th class="cell">Title</th>
+                                            <th class="cell">Deadline Date</th>
+                                            <th class="cell">Category</th>
+                                            <th class="cell">Status</th>
+                                            <th class="cell">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        @foreach ($scholarships as $scholarship)
+                                            @if($scholarship->categories->contains(function ($category) {
+                                                return strpos(strtolower($category->name), 's3') !== false;
+                                            }))
+                                                <tr>
+                                                    <td class="cell"><span class="mx-1">{{$scholarship->id}}</span></td>
+                                                    <td class="cell">
+                                                        <div class="text-center">
+                                                            <img src="../{{$scholarship->image_url}}" class="rounded" style="width: 110px; height: 110px; object-fit:cover;" alt="...">
+                                                        </div>
+                                                    </td>
+                                                    <td class="cell" style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+    <span class="text-truncate"
+          title="{{ $scholarship->title }}"
+          data-bs-toggle="modal"
+          data-bs-target="#detailModal-{{ $scholarship->id }}"
+          style="cursor: pointer;">
+        {{ $scholarship->title }}
+    </span>
+                                                    </td>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="detailModal-{{ $scholarship->id }}" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="detailModalLabel">Detail Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    {{ $scholarship->title }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <td class="cell">{{$scholarship->end_scholarship_date}}</td>
+                                                    <td class="cell"><span class="badge bg-info">
+                                                {{ implode(', ', $scholarship->categories->pluck('name')->toArray()) }}</span>
+                                                    </td>
+
+                                                    <td class="cell">
+                                                        @php
+                                                            $endDate = Carbon::parse($scholarship->end_scholarship_date);  // Tanggal dari database
+                                                            $today = Carbon::today(); // Tanggal hari ini
+                                                        @endphp
+
+                                                        <span class="badge bg-primary">
+    @if($endDate <= $today)
+                                                                Closed
+                                                            @else
+                                                                Open
+                                                            @endif
+</span>
+                                                    </td>
+
+                                                    <td class="cell">
+                                                        <div class="d-flex flex-column justify-content-center align-items-center">
+                                                            <a href="{{$scholarship->information_link}}"
+                                                               class="btn btn-sm btn-primary bg-secondary text-white mt-2"
+                                                               style="width: 80px; transition: background-color 0.3s; background-color: #6c757d;"
+                                                               onmouseover="this.style.backgroundColor='#5a6268'"
+                                                               onmouseout="this.style.backgroundColor='#6c757d'"
+                                                               onmousedown="this.style.backgroundColor='#343a40'"
+                                                               onmouseup="this.style.backgroundColor='#5a6268'">
+                                                                View
+                                                            </a>
+
+                                                            <a href="{{$scholarship->enroll_link}}"
+                                                               class="btn btn-sm btn-primary text-white mt-2"
+                                                               style="width: 80px; background-color: rgb(21, 163, 98); transition: background-color 0.3s;"
+                                                               onmouseover="this.style.backgroundColor='#198754'"
+                                                               onmouseout="this.style.backgroundColor='rgb(21, 163, 98)'"
+                                                               onmousedown="this.style.backgroundColor='#145c39'"
+                                                               onmouseup="this.style.backgroundColor='#198754'">
+                                                                Apply
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+
+
+                                        </tbody>
+                                    </table>
+                                </div><!--//table-responsive-->
+
+                            </div><!--//app-card-body-->
+                        </div><!--//app-card-->
+
+                        <div class="d-flex justify-content-center app-pagination">
+                            {{ $scholarships->appends(['search' => request()->get('search')])->links() }}
+                        </div>
+
+                    </div><!--//tab-pane-->
+
+
+                </div><!--//tab-content-->
 
 
 

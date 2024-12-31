@@ -27,6 +27,19 @@ class User extends Authenticatable
         'year_of_entry',
         'email',
         'password',
+        'picture_url',
+        'nik',
+        'gender',
+        'guardian_name',
+        'parent_occupation',
+        'school_name',
+        'year_of_graduation',
+        'latest_gpa',
+        'student_id_card',
+        'kartu_keluarga',
+        'transkrip_nilai_terakhir',
+        'ijazah_terakhir',
+        'portofolio',
     ];
 
     /**

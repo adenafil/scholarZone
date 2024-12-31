@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Beasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -29,8 +30,23 @@ class DashboardController extends Controller
         return response()->view('dashboard.applications');
     }
 
-    public function scholarships() {
-        return response()->view('dashboard.scholarship');
+    public function scholarships(Request $request) {
+
+        if ($request->has('search')) {
+            $scholarships = Beasiswa::query()
+                ->where('title', 'like', '%' . $request->get('search') . '%')
+                ->paginate(6);
+        } else {
+            $scholarships = Beasiswa::query()->paginate(6);
+        }
+
+        return response()->view('dashboard.scholarship', compact('scholarships'));
+    }
+
+    public function apply_scholarships($id) {
+        $beasiswa = Beasiswa::query()->where('id', $id)->first();
+
+        $link_apply = $beasiswa->link_apply;
     }
 
     public function documents() {
@@ -46,6 +62,11 @@ class DashboardController extends Controller
     }
 
     public function notifications() {
-        return response()->view('dashboard.notifications');
+        $today = Carbon::today();
+        $scholarships = Beasiswa::query()
+            ->whereDate('end_scholarship_date', '>=', $today) // Beasiswa yang belum melewati tanggal hari ini
+            ->paginate(3);
+
+        return response()->view('dashboard.notifications', compact('scholarships'));
     }
 }
