@@ -388,7 +388,7 @@ https://templatemo.com/tm-586-scholar
             <div class="item">
               <p>ScholarZone benar-benar membantu saya menemukan beasiswa yang sesuai dengan jurusan saya</p>
               <div class="author">
-                <img src="assets/images/testimonial-author.jpg" alt="">
+                <img src="/homepage/assets/images/testimonial-author.jpg" alt="">
                 <span class="category">Mahasiswi Akuntansi</span>
                 <h4>Dina</h4>
               </div>
