@@ -142,7 +142,7 @@
                             </div><!--//app-utility-item-->
 
                             <div class="app-utility-item app-user-dropdown dropdown">
-                                <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img class="rounded rounded-5" src="https://i.pinimg.com/736x/09/21/fc/0921fc87aa989330b8d403014bf4f340.jpg" alt="user profile"></a>
+                                <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img class="rounded rounded-5" src="{{(auth()->user()->picture_url == "" || auth()->user()->picture_url == null) ? "https://i.pinimg.com/736x/09/21/fc/0921fc87aa989330b8d403014bf4f340.jpg" : "/storage/" . auth()->user()->picture_url }}" alt="user profile"></a>
                                 <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
                                     <li><a class="dropdown-item" href="{{route('dashboard.profile')}}">Settings</a></li>
                                     <li><hr class="dropdown-divider"></li>
@@ -412,10 +412,10 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 									</div>
 
 									<div class="mb-3">
-										<label for="setting-input-14" class="form-label">Student ID Card</label>
+										<label for="setting-input-14" class="form-label">Student ID Card <span class="text-danger" style="font-size: 10px">(jpg, jpeg, png)</span></label>
 										<input id="setting-input-14" class="form-control" type="file" name="picture_url" id="formFile">
 
-                                        @if($user->picture_url)
+                                        @if($user->student_id_card )
                                             <div
                                                 id="viewIdCard"
                                                 class="btn app-btn-primary mt-3">
@@ -462,7 +462,7 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
                                     @csrf
                                     @method('PUT')
 									<div class="mb-3">
-										<label for="setting-input-15" class="form-label">Kartu Keluarga</label>
+										<label for="setting-input-15" class="form-label">Kartu Keluarga <span class="text-danger" style="font-size: 10px">(jpg, jpeg, png)</span></label>
 										<input class="form-control" type="file" id="setting-input-15" name="kartu_keluarga">
 
                                         @if($user->kartu_keluarga)
@@ -496,7 +496,7 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 
 
                                     <div class="mb-3">
-										<label for="setting-input-16" class="form-label">Transkrip Nilai Terakhir / Raport Sekolah</label>
+										<label for="setting-input-16" class="form-label">Transkrip Nilai Terakhir / Raport Sekolah <span class="text-danger" style="font-size: 10px">(jpg, jpeg, png)</span></label>
 										<input class="form-control" type="file" id="setting-input-16" name="transkrip_nilai_terakhir">
 
                                         @if($user->transkrip_nilai_terakhir)
@@ -529,7 +529,7 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 
 
                                     <div class="mb-3">
-										<label for="setting-input-17" class="form-label">Ijazah Terakhir</label>
+										<label for="setting-input-17" class="form-label">Ijazah Terakhir <span class="text-danger" style="font-size: 10px">(jpg, jpeg, png)</span></label>
 										<input class="form-control" type="file" id="setting-input-17" name="ijazah_terakhir">
 
                                         @if($user->ijazah_terakhir)
@@ -562,7 +562,7 @@ Harap lengkapi formulir ini dengan benar untuk melanjutkan pendaftaran atau peng
 
 
                                     <div class="mb-3">
-										<label for="setting-input-18" class="form-label">Portofolio / Resume</label>
+										<label for="setting-input-18" class="form-label">Portofolio / Resume <span class="text-danger" style="font-size: 10px">(jpg, jpeg, png)</span></label>
 										<input class="form-control" type="file" id="setting-input-18" name="portofolio">
 
                                         @if($user->portofolio)

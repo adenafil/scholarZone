@@ -66,7 +66,7 @@
                             </div><!--//app-utility-item-->
 
                             <div class="app-utility-item app-user-dropdown dropdown">
-                                <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img class="rounded rounded-5" src="https://i.pinimg.com/736x/09/21/fc/0921fc87aa989330b8d403014bf4f340.jpg" alt="user profile"></a>
+                                <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img class="rounded rounded-5" src="{{(auth()->user()->picture_url == "" || auth()->user()->picture_url == null) ? "https://i.pinimg.com/736x/09/21/fc/0921fc87aa989330b8d403014bf4f340.jpg" : "/storage/" . auth()->user()->picture_url }}" alt="user profile"></a>
                                 <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
                                     <li><a class="dropdown-item" href="{{route('dashboard.profile')}}">Settings</a></li>
                                     <li><hr class="dropdown-divider"></li>
