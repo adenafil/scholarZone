@@ -342,7 +342,7 @@
 							    </ul>
 						    </div><!--//app-card-body-->
 						    <div class="app-card-footer p-4 mt-auto">
-							   <a class="btn app-btn-secondary" href="#">Start Live Chat</a>
+							   <a class="btn app-btn-secondary" href="https://tawk.to/chat/6774d9c8af5bfec1dbe56964/1igg75dv7">Start Live Chat</a>
 								<a class="btn app-btn-secondary" style="color: white;
 background-color: #007bff;
 height: 40px;
@@ -476,6 +476,21 @@ height: 40px;
         });
 
     </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6774d9c8af5bfec1dbe56964/1igg75dv7';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
 
 </body>
 </html>
