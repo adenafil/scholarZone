@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+      <link rel="shortcut icon" href="/portal-logo-ade.ico">
 
     <title>Scholar - Online School HTML5 Template</title>
 
@@ -108,8 +109,8 @@ https://templatemo.com/tm-586-scholar
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->
                     <div class="search-input">
-                      <form id="search" action="#">
-                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                      <form id="search" action="/dashboard/scholarships" method="GET">
+                        <input type="text" placeholder="Type Something" id='searchText' name="search" onkeypress="handle" />
                         <i class="fa fa-search"></i>
                       </form>
                     </div>

@@ -11,7 +11,7 @@
 
     <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
-    <link rel="shortcut icon" href="/dashboard-template/favicon.ico">
+    <link rel="shortcut icon" href="/portal-logo-ade.ico">
 
     <!-- FontAwesome JS-->
     <script defer src="/dashboard-template/assets/plugins/fontawesome/js/all.min.js"></script>

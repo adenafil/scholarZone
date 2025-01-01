@@ -13,19 +13,27 @@ use Illuminate\Support\Facades\Storage;
 class DashboardController extends Controller
 {
     public function overview() {
-        $total_beasiswa_sma =  DB::table('beasiswa_category')
-            ->where('category_id', 1)
+        $today = Carbon::today();
+        $total_beasiswa_sma = DB::table('beasiswa_category')
+            ->join('beasiswas', 'beasiswa_category.beasiswa_id', '=', 'beasiswas.id')
+            ->where('beasiswa_category.category_id', 1)
+            ->whereDate('beasiswas.end_scholarship_date', '>=', $today)
             ->count();
         $total_beasiswa_s1 =  DB::table('beasiswa_category')
-            ->where('category_id', 2)
+            ->join('beasiswas', 'beasiswa_category.beasiswa_id', '=', 'beasiswas.id')
+            ->where('beasiswa_category.category_id', 2)
+            ->whereDate('beasiswas.end_scholarship_date', '>=', $today)
             ->count();
         $total_beasiswa_s2 =  DB::table('beasiswa_category')
-            ->where('category_id', 3)
+            ->join('beasiswas', 'beasiswa_category.beasiswa_id', '=', 'beasiswas.id')
+            ->where('beasiswa_category.category_id', 3)
+            ->whereDate('beasiswas.end_scholarship_date', '>=', $today)
             ->count();
         $total_beasiswa_s3 =  DB::table('beasiswa_category')
-            ->where('category_id', 4)
+            ->join('beasiswas', 'beasiswa_category.beasiswa_id', '=', 'beasiswas.id')
+            ->where('beasiswa_category.category_id', 4)
+            ->whereDate('beasiswas.end_scholarship_date', '>=', $today)
             ->count();
-
         return view('dashboard.overview', compact('total_beasiswa_sma', 'total_beasiswa_s1', 'total_beasiswa_s2', 'total_beasiswa_s3'));
     }
 
@@ -53,13 +61,17 @@ class DashboardController extends Controller
     }
 
     public function scholarships(Request $request) {
+        $today = Carbon::today();
 
         if ($request->has('search')) {
             $scholarships = Beasiswa::query()
+                ->whereDate('beasiswas.end_scholarship_date', '>=', $today)
                 ->where('title', 'like', '%' . $request->get('search') . '%')
                 ->paginate(6);
         } else {
-            $scholarships = Beasiswa::query()->paginate(6);
+            $scholarships = Beasiswa::query()
+                ->whereDate('beasiswas.end_scholarship_date', '>=', $today)
+                ->paginate(6);
         }
 
         return response()->view('dashboard.scholarship', compact('scholarships'));

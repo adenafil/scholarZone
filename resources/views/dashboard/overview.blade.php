@@ -11,7 +11,7 @@
     <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="/dashboard-template/favicon.ico">
+    <link rel="shortcut icon" href="/portal-logo-ade.ico">
 
     <!-- FontAwesome JS-->
     <script defer src="/dashboard-template/assets/plugins/fontawesome/js/all.min.js"></script>
@@ -42,12 +42,14 @@
 		            <div class="search-mobile-trigger d-sm-none col">
 			            <i class="search-mobile-trigger-icon fa-solid fa-magnifying-glass"></i>
 			        </div><!--//col-->
-		            <div class="app-search-box col">
-		                <form class="app-search-form">
-							<input type="text" placeholder="Search..." name="search" class="form-control search-input">
-							<button type="submit" class="btn search-btn btn-primary" value="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-				        </form>
-		            </div><!--//app-search-box-->
+                        <div class="app-search-box col">
+                            <form class="app-search-form" action="/dashboard/scholarships" method="GET">
+                                <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+                                <button type="submit" class="btn search-btn btn-primary" value="Search">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
+                        </div><!--//app-search-box-->
 
 		            <div class="app-utilities col-auto">
 			            <div class="app-utility-item app-notifications-dropdown dropdown link-notifications">
