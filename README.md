@@ -67,6 +67,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## TODO
 - create field region, univ, and header image to appear (DONE)
-- Validate date beasiswa (Not Done YET) 
-- Fix Search Feat
-- Fix Logo On The Browser
+- Validate date beasiswa (DONE) 
+- Fix Search Feat (DONE)
+- Fix Logo On The Browse (DONE)
