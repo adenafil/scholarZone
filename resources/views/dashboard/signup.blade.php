@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+    <title>SCHOLARZONE</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
+    <meta name="description" content="SCHOLARZONE">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
     <link rel="shortcut icon" href="/portal-logo-ade.ico">
 
@@ -17,22 +18,6 @@
 
     <!-- App CSS -->
     <link id="theme-style" rel="stylesheet" href="/dashboard-template/assets/css/portal.css">
-
-	<style>
-
-		button.hover-rondo:hover {
-			background-color: #9C89E9 !important; /* Warna lebih muda saat hover */
-		}
-
-		button.hover-rondo:active {
-			background-color: #B3A4F0 !important; /* Warna saat tombol dipencet */
-		}
-
-		.body-full {
-			height: 100% !important;
-			max-height: 100px !important;
-		}
-	</style>
 
 </head>
 
